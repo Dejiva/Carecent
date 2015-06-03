@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<carepath care_path_code="" care_path_name="" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="InteractCarePath.xsd">
+  <steps>
+    <step setp_id="0" step_name="">
+      <symptom>
+        <name>name</name>
+        <care_path_attr_code>care_path_attr_code</care_path_attr_code>
+        <next_care_path_code>next_care_path_code</next_care_path_code>
+      </symptom>
+      <vital_sign>
+        <name>name</name>
+        <care_path_attr_code>care_path_attr_code</care_path_attr_code>
+        <value>value</value>
+        <datatype>datatype</datatype>
+        <min>min</min>
+        <max>max</max>
+        <units>units</units>
+      </vital_sign>
+      <lab_work>
+        <name>name</name>
+        <care_path_attr_code>care_path_attr_code</care_path_attr_code>
+        <value>value</value>
+        <datatype>datatype</datatype>
+        <min>min</min>
+        <max>max</max>
+        <units>units</units>
+      </lab_work>
+      <lab_result>
+        <name>name</name>
+        <care_path_attr_code>care_path_attr_code</care_path_attr_code>
+      </lab_result>
+      <instruction>
+        <name>name</name>
+        <care_path_attr_code>care_path_attr_code</care_path_attr_code>
+        <linked_step_id>linked_step_id</linked_step_id>
+      </instruction>
+      <decision>
+        <met_any>
+          <next_setp_id>0</next_setp_id>
+        </met_any>
+        <met_none>
+          <next_setp_id>0</next_setp_id>
+        </met_none>
+      </decision>
+    </step>
+  </steps>
+</carepath>

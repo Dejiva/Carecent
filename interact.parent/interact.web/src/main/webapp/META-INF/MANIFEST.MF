@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Class-Path: marketops.core-1.0-SNAPSHOT.jar spring-core-4.0.0.RELEASE.
+ jar commons-logging-1.1.1.jar spring-context-4.0.0.RELEASE.jar spring
+ -aop-4.0.0.RELEASE.jar aopalliance-1.0.jar spring-beans-4.0.0.RELEASE
+ .jar spring-expression-4.0.0.RELEASE.jar spring-orm-4.0.0.RELEASE.jar
+  spring-jdbc-4.0.0.RELEASE.jar spring-tx-4.0.0.RELEASE.jar slf4j-api-
+ 1.7.5.jar hibernate-core-4.2.8.Final.jar antlr-2.7.7.jar jboss-loggin
+ g-3.1.0.GA.jar dom4j-1.6.1.jar javassist-3.18.1-GA.jar jboss-transact
+ ion-api_1.1_spec-1.0.1.Final.jar hibernate-jpa-2.0-api-1.0.1.Final.ja
+ r hibernate-commons-annotations-4.0.2.Final.jar spring-web-4.0.0.RELE
+ ASE.jar spring-webmvc-4.0.0.RELEASE.jar
+

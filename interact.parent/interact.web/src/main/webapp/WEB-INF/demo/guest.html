@@ -1,0 +1,185 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>INTERAT</title>
+    <link rel="stylesheet" href="/interact/css/foundation.min.css"/>
+    <link rel="stylesheet" href="/interact/css/app.css"/>
+    <link href="http://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800,900" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <div class="row raleway">
+        <div class="small-3 small-centered columns">
+            <img src="/interact/img/mail_logo.jpg" title="Interact"/><br/><br/>
+            <p class="lead" style="text-align:center;">Generate Stop and Watch</p>
+        </div>
+    </div>
+    <div class="row login-top raleway">
+        <div class="small-6 small-centered columns">
+              <!--<div class="row">
+                  <div class="small-4 columns">
+                          <label for="right-label" class="right inline">Bed Number:</label>
+                  </div>
+                  <div class="small-7 columns">
+                          <input type="text" id="right-label" placeholder="">
+                  </div>
+              </div>-->
+              <div class="row center">
+                  <div class="small-3 small-centered columns">
+                      <input type="button" data-reveal-id="myModal" data-reveal-ajax="true"
+                             class="button small success center launcher" value="Generate" tabindex="4"/>
+                  </div>
+              </div>
+        </div>
+    </div>
+    <div id="myModal" class="reveal-modal small raleway" data-reveal>
+        <p class="lead" style="text-align:center;">Stop and Watch Form</p>
+        <a class="close-reveal-modal">&#215;</a>
+        <form>
+          <div class="row">
+              <div class="small-12 check_data">
+                  <div class="row">
+                      <div class="small-6 columns check_box">
+                          <input id="checkbox1" type="checkbox">
+                          <label for="checkbox1">Seems different than usual</label>
+                      </div>
+                      <div class="small-6 columns check_box">
+                          <input id="checkbox2" type="checkbox">
+                          <label for="checkbox2">Talks or communicates less</label>
+                      </div>
+                  </div>
+                  <div class="row">
+                      <div class="small-6 columns check_box">
+                          <input id="checkbox3" type="checkbox">
+                          <label for="checkbox3">Overall needs more help</label>
+                      </div>
+                      <div class="small-6 columns check_box">
+                          <input id="checkbox4" type="checkbox">
+                          <label for="checkbox5">Pain – new or worsening; Participated less in activities</label>
+                      </div>
+                  </div>
+                  <div class="row">
+                      <div class="small-6 columns check_box">
+                          <input id="checkbox5" type="checkbox">
+                          <label for="checkbox5">Ate less</label>
+                      </div>
+                      <div class="small-6 columns check_box">
+                          <input id="checkbox6" type="checkbox">
+                          <label for="checkbox6">No bowel movement in 3 days; or diarrhea</label>
+                      </div>
+                  </div>
+                  <div class="row">
+                      <div class="small-6 columns check_box">
+                          <input id="checkbox7" type="checkbox">
+                          <label for="checkbox7">Drank less</label>
+                      </div>
+                      <div class="small-6 columns check_box">
+                          <input id="checkbox8" type="checkbox">
+                          <label for="checkbox8">Weight change</label>
+                      </div>
+                  </div>
+                  <div class="row">
+                      <div class="small-6 columns check_box">
+                          <input id="checkbox9" type="checkbox">
+                          <label for="checkbox9">Agitated or nervous more than usual</label>
+                      </div>
+                      <div class="small-6 columns check_box">
+                          <input id="checkbox10" type="checkbox">
+                          <label for="checkbox10">Tired, weak, confused, or drowsy</label>
+                      </div>
+                  </div>
+                  <div class="row">
+                      <div class="small-6 columns check_box">
+                          <input id="checkbox11" type="checkbox">
+                          <label for="checkbox11">Change in skin color or condition</label>
+                      </div>
+                      <div class="small-6 columns check_box">
+                          <input id="checkbox12" type="checkbox">
+                          <label for="checkbox12">Help with walking, transferring, toileting more than usual</label>
+                      </div>
+                  </div>
+              </div>
+              <br/>
+              <div class="small-10 check_data">
+                  <div class="row">
+                    <div class="small-5 columns">
+                          <label for="right-label" class="right inline">Name Of Resident</label>
+                    </div>
+                    <div class="small-7 columns">
+                        <select>
+                          <option value="husker">Husker</option>
+                          <option value="starbuck">Starbuck</option>
+                          <option value="hotdog">Hot Dog</option>
+                          <option value="apollo">Apollo</option>
+                        </select>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="small-5 columns">
+                          <label for="right-label" class="right inline">Your Name</label>
+                    </div>
+                    <div class="small-7 columns">
+                          <input type="text" id="right-label" placeholder="">
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="small-5 columns">
+                          <label for="right-label" class="right inline">Reported to</label>
+                    </div>
+                    <div class="small-7 columns">
+                        <select>
+                          <option value="husker">Husker</option>
+                          <option value="starbuck">Starbuck</option>
+                          <option value="hotdog">Hot Dog</option>
+                          <option value="apollo">Apollo</option>
+                        </select>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="small-5 columns">
+                          <label for="right-label" class="right inline">Nurse Response</label>
+                    </div>
+                    <div class="small-7 columns">
+                          <textarea placeholder=""></textarea>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="small-5 columns">
+                          <label for="right-label" class="right inline">Nurse's Name</label>
+                    </div>
+                    <div class="small-7 columns">
+                        <select>
+                          <option value="husker">Husker</option>
+                          <option value="starbuck">Starbuck</option>
+                          <option value="hotdog">Hot Dog</option>
+                          <option value="apollo">Apollo</option>
+                        </select>
+                    </div>
+                  </div>
+                  <div class="row">
+                      <div class="small-1 columns">
+                          <input type="button" data-reveal-id="myModal" data-reveal-ajax="true"
+                                 class="button small" value="Submit" tabindex="3"/>
+                      </div>
+                      <div class="small-1 columns">
+                          <input type="button" data-reveal-id="myModal" data-reveal-ajax="true"
+                                 class="button small" value="Cancel" tabindex="3"/>
+                      </div>
+                  </div>
+              </div>
+          </div>
+        </form>
+    </div>
+<script src="/interact/js/vendor/jquery-1.10.2.min.js"></script>
+<script src="/interact/js/vendor/jquery-ui.js"></script>
+<script src="/interact/js/foundation.min.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() {
+        $("input.launcher").click(function (e) {
+            $('#myModal').foundation('reveal', 'open');
+    });
+  });
+</script>
+</body>
+</html>

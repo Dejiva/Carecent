@@ -1,0 +1,88 @@
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+	xmlns:beans="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:sec="http://www.springframework.org/schema/security" xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+	http://www.springframework.org/schema/security
+	http://www.springframework.org/schema/security/spring-security-3.2.xsd">
+
+	<global-method-security secured-annotations="disabled" /> 
+
+	<http pattern="/login/**" security="none" />
+	<http pattern="/rest/**" security="none" />
+	<http pattern="/denied" security="none" />
+	<http pattern="/demo/**" security="none" />
+	<http pattern="/guest/**" security="none" />
+	<http pattern="/stopAndWatch/**" security="none" />
+	<http pattern="/img/**" security="none" />
+	<http pattern="/css/**" security="none" />
+	<http pattern="/js/**" security="none" />
+	<http pattern="/attributes**" security="none" />
+
+	<sec:http auto-config="false" entry-point-ref="authenticationEntryPoint"
+		disable-url-rewriting="true" use-expressions="true">
+		<sec:session-management>
+    	<sec:concurrency-control 
+    	max-sessions="1" 
+    	expired-url="/login?loggedout=true" />
+ 		</sec:session-management>
+		<sec:custom-filter position="FORM_LOGIN_FILTER"
+			ref="interactAuthenticationProcessingFilter" />
+		<sec:custom-filter position="LOGOUT_FILTER" ref="interactLogoutFilter" />
+		<sec:intercept-url pattern="/recover/**" access="isAnonymous()"/>
+		<sec:intercept-url pattern="/admin" access="hasRole('ROLE_ADMIN')" />
+		<sec:intercept-url pattern="/**"
+			access="hasAnyRole('ROLE_CNA','ROLE_NP','ROLE_ADMIN','ROLE_SUPER_ADMIN','ROLE_RN','ROLE_LPN','ROLE_PA','ROLE_MD','ROLE_GUEST')" />
+		<sec:access-denied-handler ref="accessDeniedHandler" />
+	</sec:http>
+
+	<beans:bean id="accessDeniedHandler"
+		class="org.springframework.security.web.access.AccessDeniedHandlerImpl"
+		p:errorPage="/denied">
+	</beans:bean>
+
+	<beans:bean id="interactLogoutFilter"
+		class="com.codecoop.interact.web.auth.InteractLogoutFilter">
+		<!-- custom-filter position="LOGOUT_FILTER" / -->
+		<beans:constructor-arg value="/login?loggedout=true" />
+		<beans:constructor-arg>
+			<beans:list>
+				<beans:bean id="logoutHandler"
+					class="org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler">
+				</beans:bean>
+			</beans:list>
+		</beans:constructor-arg>
+		<!-- beans:property name="filterProcessesUrl" value="/j_spring_security_logout" 
+			/> -->
+	</beans:bean>
+
+	<beans:bean id="authenticationEntryPoint"
+		class="org.springframework.security.web.authentication.LoginUrlAuthenticationEntryPoint">
+		<beans:property name="loginFormUrl" value="/login" />
+	</beans:bean>
+
+	<beans:bean id="interactAuthenticationProcessingFilter"
+		class="com.codecoop.interact.web.auth.InteractAuthenticationProcessingFilter">
+		<beans:property name="authenticationManager" ref="authenticationManager" />
+		<beans:property name="interactUserDetailsService" ref="interactUserDetailsService" />
+		<beans:property name="authenticationSuccessHandler">
+			<beans:bean id="authenticationSuccessHandler"
+				class="com.codecoop.interact.web.auth.InteractUrlAuthenticationSuccessHandler" />
+		</beans:property>
+		<beans:property name="authenticationFailureHandler">
+			<beans:bean id="authenticationFailureHandler"
+				class="org.springframework.security.web.authentication.SimpleUrlAuthenticationFailureHandler"
+				p:defaultFailureUrl="/login?authfailed=true" />
+		</beans:property>
+	</beans:bean>
+
+	<!-- Authentication Manager -->
+
+	<!-- This will override the settings of authentication manager bean. -->
+	<authentication-manager alias="authenticationManager">
+		<authentication-provider user-service-ref="interactUserDetailsService">
+			<password-encoder hash="md5"/>
+		</authentication-provider>
+	</authentication-manager>
+
+</beans:beans>

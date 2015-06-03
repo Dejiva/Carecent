@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="symptom">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="name" type="xs:string" />
+				<xs:element name="datatype" type="xs:string" />
+				<xs:element name="sbar_attr_code" type="xs:string" minOccurs="1" maxOccurs="1"/>
+				<xs:element name="care_path_attr_code" type="xs:string"
+					minOccurs="0" maxOccurs="1"/>
+					
+			</xs:sequence>
+			
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="symptoms">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="symptom" minOccurs="0" maxOccurs="unbounded" />
+			</xs:sequence> 
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="section" >
+		<xs:complexType>
+			<xs:sequence>
+			   <xs:element name="name" type="xs:string" />
+				<xs:element ref="symptoms" minOccurs="0" maxOccurs="1" />
+			</xs:sequence> 
+			<xs:attribute name="order" type="xs:int" />
+			
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="sbar_relevent_symptoms" >
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="section" minOccurs="0" maxOccurs="unbounded" />
+			</xs:sequence> 
+		</xs:complexType>
+	</xs:element>
+
+	
+</xs:schema>

@@ -1,0 +1,12 @@
+XRAY_PORTABLE_CHEST :-> Portable chest X-ray
+URINALYSIS_AND_CP_IF_INDICATED :-> Urinalysis and C&amp;S if indicated
+BLOOD_WORK_CBC_BMP :-> Blood work (Complete Blood Count, Basic Metabolic Panel)
+BNP_LEVEL :-> BNP Level
+EKG :-> EKG
+XRAY_OR_ULTRASOUND_ABDOMINAL_IF_AVAILABLE :-> Abdominal X-ray or ultrasound (if available)
+STOOL_SPECIMER_FOR_OCCULT_BLOOD :-> Stool specimen for occult blood
+STOOL_SPECIMER_FOR_CULTURE_AND_TOXIN :-> Stool specimen for culture and C. difficile toxin assay
+BLOOD_WORK_WITH_MORE_DETAILS :-> Blood work(CBC, comprehensive metabolic panel (including liver function tests), 
+											Amylase, lipase, thyroid function, 
+											Digoxin blood level (if relevant,for nausea/vomiting))
+BEDSIDE_SPIROMETRY :-> Bedside spirometry (if available and no cognitive impairment)

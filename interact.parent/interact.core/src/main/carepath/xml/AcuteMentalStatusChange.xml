@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<care_path_xml care_path_code="AMSC" care_path_name="Acute Mental Status Change"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="../schemas/InteractCarePath.xsd">
+	<steps>
+		<step step_name="New Mental Status Change Noted" step_id="1" step_type="intialStep">
+			<symptom>
+				<name>New symptoms or signs of increased confusion(e.g. disorientation, change in speech)</name>
+				<care_path_attr_code>CP_AMSC_S1_SYMPTOM1</care_path_attr_code>
+                
+			</symptom>
+			<symptom>
+				<name>Decreased level of consciousness</name>
+				<care_path_attr_code>CP_AMSC_S1_SYMPTOM2</care_path_attr_code>
+                
+			</symptom>
+			<symptom>
+				<name>Inability to perform usual activities (due to mental status change)</name>
+				<care_path_attr_code>CP_AMSC_S1_SYMPTOM3</care_path_attr_code>
+               
+			</symptom>
+			<symptom>
+				<name>New or worsened physical and/or verbal agitation</name>
+				<care_path_attr_code>CP_AMSC_S1_SYMPTOM4</care_path_attr_code>
+				<next_care_path>
+					<step_flag>false</step_flag>
+					<care_path_code>CIB</care_path_code>
+				</next_care_path>
+			</symptom>
+			<symptom>
+				<name>New or worsened delusions or hallucinations</name>
+				<care_path_attr_code>CP_AMSC_S1_SYMPTOM5</care_path_attr_code>
+				<next_care_path>
+					<step_flag>false</step_flag>
+					<care_path_code>CIB</care_path_code>
+				</next_care_path>
+			</symptom>
+
+			<decision>
+				<met_any>
+					<next_step_id>2</next_step_id>
+				</met_any>
+				<met_none>
+					<message>DO_NOTHING</message>
+				</met_none>
+			</decision>
+		</step>
+		<step step_name="Vital Sign Criteria" step_id="2">
+			<vital_sign>
+				<name>Temp</name>
+				<care_path_attr_code>TEMP</care_path_attr_code>
+				<value></value>
+				<datatype>FLOAT</datatype>
+				<min></min>
+				<max>100.5</max>
+				<units>°F</units>
+			</vital_sign>
+			<vital_sign>
+				<name>Apical heart rate</name>
+				<care_path_attr_code>APICAL_HEART_RATE</care_path_attr_code>
+				<value></value>
+				<datatype>INT</datatype>
+				<min>50</min>
+				<max>100</max>
+				<units></units>
+			</vital_sign>
+			<vital_sign>
+				<name>Respiratory rate</name>
+				<care_path_attr_code>RESPIRATORY_RATE</care_path_attr_code>
+				<value></value>
+				<datatype>INT</datatype>
+				<min>10</min>
+				<max>28</max>
+				<units>/min</units>
+			</vital_sign>
+			<vital_sign>
+				<name>Systolic BP</name>
+				<care_path_attr_code>SYSTOLIC_BP</care_path_attr_code>
+				<value></value>
+				<datatype>INT</datatype>
+				<min>90</min>
+				<max>200</max>
+				<units></units>
+			</vital_sign>
+			<vital_sign>
+				<name>Oxygen saturation</name>
+				<care_path_attr_code>OXYGEN_SATURATION</care_path_attr_code>
+				<value></value>
+				<datatype>INT</datatype>
+				<min>90</min>
+				<max></max>
+				<units>%</units>
+			</vital_sign>
+			<vital_sign>
+				<name>Finger stick glucose</name>
+				<care_path_attr_code>FINGER_STICK_GLUCOSE</care_path_attr_code>
+				<value></value>
+				<datatype>INT</datatype>
+				<min>70</min>
+				<max>300</max>
+				<units></units>
+			</vital_sign>
+			<decision>
+				<met_any>
+					<message>NOTIFY_MD_NP_PA</message>
+				</met_any>
+				<met_none>
+					<next_step_id>3</next_step_id>
+				</met_none>
+			</decision>
+		</step>
+		<step step_name="Evaluate Symptoms and Signs" step_id="3">
+			<symptom>
+				<name>Not eating or drinking</name>
+				<care_path_attr_code>CP_AMSC_S3_SYMPTOM1</care_path_attr_code>
+
+			</symptom>
+			<symptom>
+				<name>Significant decline in food and fluid intake in resident with marginal hydration and nutritional status</name>
+				<care_path_attr_code>CP_AMSC_S3_SYMPTOM1_CIC_NIM</care_path_attr_code>
+
+			</symptom>
+			<symptom>
+				<name>Acute decline in ADL abilities</name>
+				<care_path_attr_code>CP_AMSC_S3_SYMPTOM2</care_path_attr_code>
+
+			</symptom>
+			<symptom>
+				<name>Abrupt onset of general weakness with fever or other acute symptoms</name>
+				<care_path_attr_code>CP_AMSC_S3_SYMPTOM1_CIC_IM1</care_path_attr_code>
+
+			</symptom>
+			<symptom>
+				<name>Abrupt onset of general weakness without fever, change in level of consciousness, or other acute symptoms</name>
+				<care_path_attr_code>CP_AMSC_S3_SYMPTOM1_CIC_NIM1</care_path_attr_code>
+
+			</symptom>
+			<symptom>
+				<name>New cough, abnormal lung sounds</name>
+				<care_path_attr_code>CP_AMSC_S3_SYMPTOM3</care_path_attr_code>
+				<next_care_path>
+					<step_flag>true</step_flag>
+					<care_path_code>LRI</care_path_code>
+					<step_id>1</step_id>
+				</next_care_path>
+			</symptom>
+
+			<symptom>
+				<name>Nausea, vomiting, diarrhea</name>
+				<care_path_attr_code>CP_AMSC_S3_SYMPTOM4</care_path_attr_code>
+				<next_care_path>
+					<step_flag>true</step_flag>
+					<care_path_code>GI</care_path_code>
+					<step_id>1</step_id>
+				</next_care_path>
+			</symptom>
+			<symptom>
+				<name>Abdominal distension or tenderness</name>
+				<care_path_attr_code>CP_AMSC_S3_SYMPTOM5</care_path_attr_code>
+				<next_care_path>
+					<step_flag>true</step_flag>
+					<care_path_code>GI</care_path_code>
+					<step_id>1</step_id>
+				</next_care_path>
+			</symptom>
+			<symptom>
+				<name>New or worsened incontinence,pain with urination, blood in urine</name>
+				<care_path_attr_code>CP_AMSC_S3_SYMPTOM6</care_path_attr_code>
+				<next_care_path>
+					<step_flag>true</step_flag>
+					<care_path_code>UTI</care_path_code>
+					<step_id>1</step_id>
+				</next_care_path>
+			</symptom>
+			<symptom>
+				<name>New skin condition (e.g. rash, redness suggesting cellulitus, signs of infection around existing wound/pressure ulcer</name>
+				<care_path_attr_code>CP_AMSC_S3_SYMPTOM7</care_path_attr_code>
+
+			</symptom>
+			<symptom>
+				<name>New onset T > 100.5 F in someone with Grade 2 or higher sore</name>
+				<care_path_attr_code>CP_AMSC_S3_SYMPTOM1_CIC_IM2</care_path_attr_code>
+
+			</symptom>
+			<symptom>
+				<name>New onset Grade 2 or higher pressure sore, OR progression of pressure sore despite interventions</name>
+				<care_path_attr_code>CP_AMSC_S3_SYMPTOM1_CIC_NIM2</care_path_attr_code>
+
+			</symptom>
+			<symptom>
+				<name>Deep or open wound, OR with more than minor bleeding</name>
+				<care_path_attr_code>CP_AMSC_S3_SYMPTOM1_CIC_IM3</care_path_attr_code>
+
+			</symptom>
+			<symptom>
+				<name>Minor uncomplicated puncture wound</name>
+				<care_path_attr_code>CP_AMSC_S3_SYMPTOM1_CIC_NIM3</care_path_attr_code>
+
+			</symptom>
+			<symptom>
+				<name>Rash in someone taking a new medication, OR one known to cause allergic reaction</name>
+				<care_path_attr_code>CP_AMSC_S3_SYMPTOM1_CIC_IM4</care_path_attr_code>
+
+			</symptom>
+			<symptom>
+				<name>Recent onset of localized or diffuse pruritic rash, OR any rash accompanied by other systematic symptoms</name>
+				<care_path_attr_code>CP_AMSC_S3_SYMPTOM1_CIC_NIM4</care_path_attr_code>
+
+			</symptom>
+
+
+			<decision>
+				<met_any>
+					<message>NOTIFY_MD_NP_PA</message>
+				</met_any>
+				<met_none>
+					<next_step_id>4</next_step_id>
+				</met_none>
+			</decision>
+		</step>
+		<step step_name="Consider Orders for" step_id="4" step_type="CONSIDER_ORDERS">
+			<instruction>
+				<name>Portable chest X-ray</name>
+				<care_path_attr_code>XRAY_PORTABLE_CHEST</care_path_attr_code>
+			</instruction>
+			<instruction>
+				<name>Urinalysis and C&amp;S if indicated</name>
+				<care_path_attr_code>URINALYSIS_AND_CP_IF_INDICATED</care_path_attr_code>
+			</instruction>
+			<instruction>
+				<name>Blood work (Complete Blood Count, Basic Metabolic Panel)</name>
+				<care_path_attr_code>BLOOD_WORK_CBC_BMP</care_path_attr_code>
+			</instruction>
+			<decision>
+				<met_any>
+					<next_step_id>5</next_step_id>
+				</met_any>
+				<met_none>
+					<next_step_id>5</next_step_id>
+				</met_none>
+			</decision>
+		</step>
+		<step step_name="Evaluate Results" step_id="5">
+			<lab_work>
+				<name>WBC</name>
+				<care_path_attr_code>WBC_COUNT</care_path_attr_code>
+				<value></value>
+				<datatype>INT</datatype>
+				<min></min>
+				<max>14000</max>
+				<units></units>
+			</lab_work>
+			<lab_work>
+				<name>Neutrophils</name>
+				<care_path_attr_code>CP_AMSC_S5_LAB_WORK1</care_path_attr_code>
+				<value></value>
+				<datatype>INT</datatype>
+				<min></min>
+				<max>90</max>
+				<units>%</units>
+			</lab_work>
+			<lab_result>
+				<name>Infiltrate or pneumonia on chest X-ray</name>
+				<care_path_attr_code>XRAY_PORTABLE_CHEST_ATTR1</care_path_attr_code>
+			</lab_result>
+			<lab_result>
+				<name>Urine results suggest infection and symptoms or signs present</name>
+				<care_path_attr_code>CP_AMSC_S5_LAB_WORK3</care_path_attr_code>
+			</lab_result>
+			<decision>
+				<met_any>
+					<message>NOTIFY_MD_NP_PA</message>
+				</met_any>
+				<met_none>
+					<next_step_id>6</next_step_id>
+				</met_none>
+			</decision>
+		</step>
+		<step step_name="Manage in Facility" step_id="6" step_type="MANAGE_IN_FACILITY">
+			<symptom>
+				<name>Worsening condition</name>
+				<care_path_attr_code>CP_AMSC_S6_SYMPTOM1</care_path_attr_code>
+			</symptom>
+			<instruction>
+				<name>Monitor vital signs, fluid intake/urine output every 4-8 hrs for 24-72 hrs</name>
+				<detail_description>Temp &gt; 100.5&#8457;</detail_description>
+				<detail_description>Apical heart rate &gt; 100 or &lt; 50</detail_description>
+				<detail_description>Respiratory rate &gt; 28/min or &lt; 10/min</detail_description>
+				<detail_description>BP &lt; 90 or &gt; 200 systolic</detail_description>
+				<detail_description>Oxygen saturation &lt; 90%</detail_description>
+				<detail_description>Finger stick glucose &lt; 70 or &gt; 300</detail_description>
+				<care_path_attr_code>CP_AMSC_S6_INSTRUCTION1</care_path_attr_code>
+			</instruction>
+			<instruction>
+				<name>If on diuretic, consider holding</name>
+				<care_path_attr_code>CP_AMSC_S6_INSTRUCTION2</care_path_attr_code>
+			</instruction>
+			<instruction>
+				<name>Offer frequent small fluids (2-4 oz q 2h)</name>
+				<care_path_attr_code>CP_AMSC_S6_INSTRUCTION3</care_path_attr_code>
+			</instruction>
+			<instruction>
+				<name>If on tube feeding, give more water with flushes</name>
+				<care_path_attr_code>CP_AMSC_S6_INSTRUCTION4</care_path_attr_code>
+			</instruction>
+			<instruction>
+				<name>Consider IV or subcutaneous fluids</name>
+				<care_path_attr_code>CP_AMSC_S6_INSTRUCTION5</care_path_attr_code>
+			</instruction>
+			<instruction>
+				<name>Update advance care plan and directives if appropriate</name>
+				<care_path_attr_code>CP_AMSC_S6_INSTRUCTION6</care_path_attr_code>
+			</instruction>
+			<decision>
+				<met_any>
+					<message>NOTIFY_MD_NP_PA</message>
+				</met_any>
+				<met_none>
+					<message>Monitor vital signs, fluid intake/urine output every 4-8 hrs for 24-72 hrs</message>
+				</met_none>
+			</decision>
+		</step>
+	</steps>
+</care_path_xml>	

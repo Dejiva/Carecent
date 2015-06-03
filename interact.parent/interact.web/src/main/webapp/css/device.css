@@ -1,0 +1,194 @@
+/* iPad - WIDTH - 768 and 1024 */
+@media screen and (min-width : 768px) and (max-width : 1024px)  { /* and (orientation:portrait) */
+	button#forgotPassword{
+		margin: 18px 0 0 !important;
+	}
+	
+  	select#facilityId {
+  		padding: 5px 0 !important;
+		width: 180px;
+		margin-left: -8px !important;
+		height: 30px !important;
+  	}
+  	
+  	div.app_logo.small-2.columns {
+		width: 30%;
+		margin-top: -10px;
+	}
+  	
+  	div.small-8.columns.user_info.right {
+		width: 87%;
+	}
+	
+  	div.small-7.columns.user_info {
+		position: relative;
+		top: -15px;		
+	}
+	
+	#ShowFacilitySelectModal_topSection.small-6.columns.user_info {
+		top: -2px;
+	}
+	
+	select#sfacilityId {
+		width: 172px;
+		padding: 4px 0 !important;
+		height: 28px !important;
+	}
+	
+	th > div.left > b{
+		position: relative !important;
+		/* top: -16px !important;
+		left: 15px !important; */
+	}
+	
+	table.mail_table thead tr th, table thead tr td {
+		padding: 0px;
+	}
+
+	span#deleteTrashId.fi-trash{
+		position: relative;
+		left: -4px;			
+	}
+	
+	span#pageRefreshId.fi-refresh{
+		left: 3px;
+		position: relative;
+	}
+	
+	.panel.col_last {
+		margin-left: 0px !important;
+		margin-top: 5px;
+	}
+	
+	.col_date{
+		text-align: right;
+	}
+	
+	.col_last_head {
+		margin-top: 5px;
+	}
+	
+	div.medium-2.columns.top_info{
+		width: 26% !important;
+	}
+	
+	div.medium-10.columns.top_info.right{
+		width: 74% !important;
+	}
+	
+	div.medium-2.columns.top_info.right {
+		width: 29% !important;
+	}
+	
+	.anouncements table, table.alerts-table{
+		width: 100% !important;
+	}	
+	
+	.large-6.columns.padding-lr, .large-5.columns.padding-lr, .large-4.columns.padding-lr, .large-3.columns.padding-lr,
+	 .large-2.columns.padding-lr, .large-1.columns.padding-lr, .large-2.columns, .large-1.columns{
+		width: auto !important;
+		margin-left: 0px !important;
+	}
+	
+	[class*="column"]+[class*="column"]:last-child{
+		/* float: left !important;  */
+	}
+	
+	.large-2.columns.padding-lr{
+		left: 0px !important;
+	}
+	
+	large-2 columns padding-lr end{
+		left: 0px !important;
+	}
+	
+	div.NewPatientModalDiv{
+		max-height: 870px !important;
+	}
+	
+	.col_last_head {
+		padding: 0px 10px;
+	}
+	
+	#stopAndWatchForm2{
+		margin-bottom: 20px;
+		max-height: 700px !important;
+		width: 100%;
+	}
+	
+	.tabs dd>a, .tabs .tab-title>a{
+		padding: 0.55rem 0.75rem !important;
+		font-size: 14px;
+	}
+	
+	.tabs.vertical > dd {
+		line-height: inherit !important;
+	}
+	
+	.align-data{
+		padding: 0px 11px;
+		top: -7px !important;
+	}
+	
+	#StopAndWatchModal.reveal-modal.large{
+		width: 90% !important;
+		margin-left: -45% !important;
+	}
+	
+	#StopAndWatchModal p.lead{
+		margin: 0px !important;
+		top: 10px;
+		position: relative;
+	}
+	
+	dialog .close-reveal-modal, .reveal-modal .close-reveal-modal{
+		top: 0rem !important;
+	}
+	
+	#stopAndWatchForm2 .fi-play{
+		top: -4px !important;
+	}
+	
+	#stopAndWatchForm2 .fi-play_down {
+		position: relative;
+		left: 0px;
+	}
+	
+	.msg-count{
+		bottom: 0px !important;
+		padding: 1px 7px !important;
+		width: auto !important;
+		height: 20px !important;
+	}
+	
+	table tr td{
+		padding: 0px !important;
+	}
+	
+	.left-message {
+		float: left !important;
+		position: relative;
+		top: 15px;
+		left: -35px;
+	}
+	
+	#checkAll{
+		float: left !important;
+	}
+	
+	#userSettingsModal .dataTables_wrapper {
+		height: 400px;
+		overflow: auto !important;
+	}
+}
+
+/* iPad - WIDTH - 1024 */
+@media only screen and (max-width : 1024px) and (orientation: landscape) { 
+	div.medium-2.columns.top_info.right {
+/* 		margin-left: -35px; */
+	}
+	
+	div.NewPatientModalDiv{
+		max-height: 615px !important;
+	}
+}

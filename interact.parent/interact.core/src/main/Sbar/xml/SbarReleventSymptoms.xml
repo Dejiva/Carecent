@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sbar_relevent_symptoms 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="../schemas/SbarReleventSymptoms.xsd">
+	<section order="1">
+	    <name> Mental Status Changes (compared to baseline; check all that you observe) </name>
+		<symptoms >
+			<symptom>
+				<name> Increased confusion</name>
+				<datatype>BOOLEAN</datatype>
+				<sbar_attr_code>SBAR_MSC_SYMPTOM1</sbar_attr_code>
+				<care_path_attr_code>CP_AMSC_S1_SYMPTOM1</care_path_attr_code>
+                
+			</symptom>
+			<symptom>
+			
+				<name>New or worsening behavioral symptoms </name>
+				<datatype>BOOLEAN</datatype>
+				<sbar_attr_code>SBAR_MSC_SYMPTOM2</sbar_attr_code>
+				<care_path_attr_code>CP_AMSC_S1_SYMPTOM4</care_path_attr_code>
+                
+			</symptom>
+			<symptom>
+				<name> Decreased consciousness(sleepy, lethargic)</name>
+				<datatype>BOOLEAN</datatype>
+				<sbar_attr_code>SBAR_MSC_SYMPTOM3</sbar_attr_code>
+				<care_path_attr_code>CP_AMSC_S1_SYMPTOM2</care_path_attr_code>
+                
+			</symptom>
+			<symptom>
+				<name>Unresponsiveness </name>
+				<datatype>BOOLEAN</datatype>
+				<sbar_attr_code>SBAR_MSC_SYMPTOM4</sbar_attr_code>
+				
+                
+			</symptom>
+			<symptom >
+				<name>Other symptoms or signs of delirium (e.g. inability to pay attention,disorganized thinking) </name>
+				<datatype>BOOLEAN</datatype>
+				<sbar_attr_code>SBAR_MSC_SYMPTOM5</sbar_attr_code>
+				<care_path_attr_code>CP_AMSC_S1_SYMPTOM3</care_path_attr_code>
+                
+			</symptom>
+			<symptom>
+				<name>Describe symptoms or signs</name>
+				<datatype>VARCHAR</datatype>
+				<sbar_attr_code>SBAR_MSC_SYMPTOM6</sbar_attr_code>
+			</symptom>
+			
+		</symptoms>
+	</section>
+	<section  order='2'>
+	   <name>Functional Status Changes (compared to baseline; check all that you observe)</name>
+	  <symptoms>
+	    <symptom>
+				<name>Needs more assistance with ADLs</name>
+				<datatype>BOOLEAN</datatype>
+				<sbar_attr_code>SBAR_FSC_SYMPTOM1</sbar_attr_code>
+			</symptom>
+			<symptom>
+				<name>Decreased mobility</name>
+				<datatype>BOOLEAN</datatype>
+				<sbar_attr_code>SBAR_FSC_SYMPTOM2</sbar_attr_code>
+			</symptom>
+			<symptom>
+				<name>Fall</name>
+				<datatype>BOOLEAN</datatype>
+				<sbar_attr_code>SBAR_FSC_SYMPTOM3</sbar_attr_code>
+			  
+			</symptom>
+			<symptom>
+				<name>Weakness or hemiparesis </name>
+				<datatype>BOOLEAN</datatype>
+				<sbar_attr_code>SBAR_FSC_SYMPTOM4</sbar_attr_code>
+			</symptom>
+			<symptom>
+				<name>Slurred speech</name>
+				<datatype>BOOLEAN</datatype>
+				<sbar_attr_code>SBAR_FSC_SYMPTOM5</sbar_attr_code>
+			
+            </symptom>
+            <symptom>
+				<name>Trouble swallowing</name>
+				<datatype>BOOLEAN</datatype>
+				<sbar_attr_code>SBAR_FSC_SYMPTOM6</sbar_attr_code>
+				
+			</symptom>
+			<symptom >
+				<name> Describe symptoms or signs</name>
+				<datatype>VARCHAR</datatype>
+				<sbar_attr_code>SBAR_FSC_SYMPTOM7</sbar_attr_code>
+			</symptom>
+	  </symptoms>
+	
+	
+	</section>
+	<section  order='3'>
+	   <name>Respiratory</name>
+	  <symptoms>
+	    <symptom>
+				<name> Shortness of breath </name>
+				<datatype>BOOLEAN</datatype>
+				<sbar_attr_code>SBAR_SOS_SYMPTOM1</sbar_attr_code>
+				
+				<care_path_attr_code>CP_SOB_S1_SYMPTOM2</care_path_attr_code>
+                
+			</symptom>
+			<symptom>
+				<name>Cough</name>
+				<datatype>BOOLEAN</datatype>
+				<sbar_attr_code>SBAR_SOS_SYMPTOM2</sbar_attr_code>
+				<care_path_attr_code>CP_SOB_S3_SYMPTOM1</care_path_attr_code>
+                
+			</symptom>
+			<symptom>
+				<name>Abnormal lung sounds</name>
+				<datatype>BOOLEAN</datatype>
+				<sbar_attr_code>SBAR_SOS_SYMPTOM3</sbar_attr_code>
+				<care_path_attr_code>CP_SOB_S3_SYMPTOM2</care_path_attr_code>
+                
+			</symptom>
+			<symptom>
+				<name>Labored breathing</name>
+				<datatype>BOOLEAN</datatype>
+				<sbar_attr_code>SBAR_SOS_SYMPTOM4</sbar_attr_code>
+				<care_path_attr_code>CP_SOB_S1_SYMPTOM1</care_path_attr_code>
+                
+			</symptom>
+			<symptom>
+				<name>Describe symptoms or signs </name>
+				<datatype>VARCHAR</datatype>
+				<sbar_attr_code>SBAR_SOS_SYMPTOM5</sbar_attr_code>
+				</symptom>
+	  </symptoms>
+	
+	
+	</section>
+	<section  order='4'>
+	   <name>GI/Abdomen</name>
+	  <symptoms>
+	    <symptom>
+				<name>Nausea</name>
+				<datatype>BOOLEAN</datatype>
+				<sbar_attr_code>SBAR_GIA_SYMPTOM1</sbar_attr_code>
+				<care_path_attr_code>CP_GI_S1_SYMPTOM1</care_path_attr_code>
+                
+			</symptom>
+			<symptom>
+				<name>Vomiting</name>
+				<datatype>BOOLEAN</datatype>
+				<sbar_attr_code>SBAR_GIA_SYMPTOM2</sbar_attr_code>
+				<care_path_attr_code>CP_GI_S1_SYMPTOM1</care_path_attr_code>
+                
+			</symptom>
+			<symptom>
+				<name>Diarrhea</name>
+				<datatype>BOOLEAN</datatype>
+				<sbar_attr_code>SBAR_GIA_SYMPTOM3</sbar_attr_code>
+				<care_path_attr_code>CP_GI_S1_SYMPTOM2</care_path_attr_code>
+                
+			</symptom>
+			<symptom>
+				<name>Decreased appetite</name>
+				<datatype>BOOLEAN</datatype>
+				<sbar_attr_code>SBAR_GIA_SYMPTOM3</sbar_attr_code>
+			</symptom>
+			<symptom>
+				<name>Abdominal pai</name>
+				<datatype>BOOLEAN</datatype>
+				<sbar_attr_code>SBAR_GIA_SYMPTOM4</sbar_attr_code>
+				<care_path_attr_code>CP_GI_S1_SYMPTOM4</care_path_attr_code>
+            </symptom>
+            <symptom>
+				<name>Distended abdomen</name>
+				<datatype>BOOLEAN</datatype>
+				<sbar_attr_code>SBAR_GIA_SYMPTOM5</sbar_attr_code>
+				<care_path_attr_code>CP_GI_S1_SYMPTOM5</care_path_attr_code>
+                
+			</symptom>
+			<symptom>
+				<name>Tenderness </name>
+				<datatype>BOOLEAN</datatype>
+				<sbar_attr_code>SBAR_GIA_SYMPTOM6</sbar_attr_code>
+			</symptom>
+			<symptom>
+				<name>Decreased bowel sounds</name>
+				<datatype>BOOLEAN</datatype>
+				<sbar_attr_code>SBAR_GIA_SYMPTOM7</sbar_attr_code>
+			</symptom>
+			<symptom>
+				<name>Date of last BM</name>
+				<datatype>DATE</datatype>
+				<sbar_attr_code>SBAR_GIA_SYMPTOM8</sbar_attr_code>
+			</symptom>
+			<symptom >
+				<name>Describe symptoms or signs</name>
+				<datatype>VARCHAR</datatype>
+				<sbar_attr_code>SBAR_GIA_SYMPTOM9</sbar_attr_code>
+				
+			</symptom>
+	  </symptoms>
+	
+	
+	</section>
+	<section  order='5'>
+	   <name>GU/Urine Changes(compared to baseline; check all that you observe)</name>
+	  <symptoms>
+	    <symptom>
+				<name> Decreased urine output</name>
+				<datatype>BOOLEAN</datatype>
+				<sbar_attr_code>SBAR_GUUC_SYMPTOM1</sbar_attr_code>
+			</symptom>
+			<symptom>
+				<name>Painful urination</name>
+				<datatype>BOOLEAN</datatype>
+				<sbar_attr_code>SBAR_GUUC_SYMPTOM2</sbar_attr_code>
+				<care_path_attr_code>CP_UTI_S1_SYMPTOM1</care_path_attr_code>
+                
+			</symptom>
+			<symptom>
+				<name>Urinating more frequently</name>
+				<datatype>BOOLEAN</datatype>
+				<sbar_attr_code>SBAR_GUUC_SYMPTOM3</sbar_attr_code>
+				<care_path_attr_code>CP_UTI_S1_SYMPTOM4</care_path_attr_code>
+                
+			</symptom>
+			<symptom>
+				<name>Needs to urinate more urgently</name>
+				<datatype>BOOLEAN</datatype>
+				<sbar_attr_code>SBAR_GUUC_SYMPTOM4</sbar_attr_code>
+			</symptom>
+			<symptom>
+				<name>Blood in urine</name>
+				<datatype>BOOLEAN</datatype>
+				<sbar_attr_code>SBAR_GUUC_SYMPTOM5</sbar_attr_code>
+				<care_path_attr_code>CP_UTI_S1_SYMPTOM3</care_path_attr_code>
+            </symptom>
+            <symptom>
+				<name>New or worsening incontinence</name>
+				<datatype>BOOLEAN</datatype>
+				<sbar_attr_code>SBAR_GUUC_SYMPTOM6</sbar_attr_code>
+				<care_path_attr_code>CP_UTI_S1_SYMPTOM4</care_path_attr_code>
+                
+			</symptom>
+			<symptom >
+				<name>Describe symptoms or signs</name>
+				<datatype>VARCHAR</datatype>
+				<sbar_attr_code>SBAR_GUUC_SYMPTOM7</sbar_attr_code>
+		  </symptom>
+	  </symptoms>
+	
+	
+	</section>
+</sbar_relevent_symptoms>	

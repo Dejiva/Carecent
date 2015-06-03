@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<care_path_xml care_path_code="UTI" care_path_name="Urinary Tract Infection" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../schemas/InteractCarePath.xsd">
+	<steps>
+		<step step_name="Symptoms or Signs of UTI" step_id="1">
+			<symptom>
+				<name>Painful urination (dysuria)</name>
+				<care_path_attr_code>CP_UTI_S1_SYMPTOM1</care_path_attr_code>
+			</symptom>
+			<symptom>
+				<name>Lower abdominal pain or tenderness</name>
+				<care_path_attr_code>CP_UTI_S1_SYMPTOM2</care_path_attr_code>
+			</symptom>
+			<symptom>
+				<name>Blood in urine</name>
+				<care_path_attr_code>CP_UTI_S1_SYMPTOM3</care_path_attr_code>
+			</symptom>
+			<symptom>
+				<name>New or worsening urinary urgency, frequency,ncontinence</name>
+				<care_path_attr_code>CP_UTI_S1_SYMPTOM4</care_path_attr_code>
+			</symptom>
+			<decision>
+				<met_any>
+					<next_step_id>2</next_step_id>
+				</met_any>
+				<met_none>
+					<message>DO_NOTHING</message>
+				</met_none>
+			</decision>	
+		</step>
+		<step step_name="Vital Sign Criteria" step_id="2">
+            <symptom>
+				<name>Resident unable to eat or drink</name>
+				<care_path_attr_code>CP_UTI_S2_SYMPTOM1</care_path_attr_code>	
+            </symptom>		
+			<vital_sign>
+				<name>Temp</name>
+				<care_path_attr_code>TEMP</care_path_attr_code>
+				<value></value>
+				<datatype>FLOAT</datatype>
+				<min></min>
+				<max>100.5</max>
+				<units>°F</units>
+			</vital_sign>
+			<vital_sign>
+				<name>Apical heart rate</name>
+				<care_path_attr_code>APICAL_HEART_RATE</care_path_attr_code>
+				<value></value>
+				<datatype>INT</datatype>
+				<min>50</min>
+				<max>100</max>
+				<units></units>
+			</vital_sign>	
+			<vital_sign>
+				<name>Respiratory rate</name>
+				<care_path_attr_code>RESPIRATORY_RATE</care_path_attr_code>
+				<value></value>
+				<datatype>INT</datatype>
+				<min>10</min>
+				<max>28</max>	
+				<units>/min</units>				
+			</vital_sign>
+			<vital_sign>
+				<name>Systolic BP</name>
+				<care_path_attr_code>SYSTOLIC_BP</care_path_attr_code>
+				<value></value>
+				<datatype>INT</datatype>
+				<min>90</min>
+				<max>200</max>
+				<units></units>	
+			</vital_sign>			
+			<vital_sign>
+				<name>Oxygen saturation</name>
+				<care_path_attr_code>OXYGEN_SATURATION</care_path_attr_code>
+				<value></value>
+				<datatype>INT</datatype>
+				<min>90</min>
+				<max></max>
+				<units>%</units>	
+			</vital_sign>	
+			<vital_sign>
+				<name>Finger stick glucose</name>
+				<care_path_attr_code>FINGER_STICK_GLUCOSE</care_path_attr_code>
+				<value></value>
+				<datatype>INT</datatype>
+				<min>70</min>
+				<max>300</max>
+				<units></units>	
+			</vital_sign>
+				
+			<decision>
+				<met_any>
+					<message>NOTIFY_MD_NP_PA</message>
+				</met_any>
+				<met_none>
+					<next_step_id>3</next_step_id>
+				</met_none>
+			</decision>	
+		</step>		
+			
+		<step step_name="Consider Orders for" step_id="3" step_type="CONSIDER_ORDERS">
+			<instruction>
+				<name>Portable chest X-ray</name>
+				<care_path_attr_code>XRAY_PORTABLE_CHEST</care_path_attr_code>
+			</instruction>
+			<instruction>
+				<name>Blood work (Complete Blood Count, Basic Metabolic Panel )</name>
+				<care_path_attr_code>BLOOD_WORK_CBC_BMP</care_path_attr_code>
+			</instruction>
+			<instruction>
+				<name>BNP Level</name>
+				<care_path_attr_code>BNP_LEVEL</care_path_attr_code>
+			</instruction>
+            <instruction>
+				<name>EKG</name>
+				<care_path_attr_code>EKG</care_path_attr_code>
+			</instruction>			
+			<decision>
+				<met_any>
+					<next_step_id>4</next_step_id>
+				</met_any>
+				<met_none>
+					<next_step_id>4</next_step_id>
+				</met_none>
+			</decision>				
+		</step>
+		<step step_name="Evaluate Results" step_id="4">
+			<lab_result>
+				<name>Results of chest X-ray suggestive of CHF or pneumonia</name>
+				<care_path_attr_code>XRAY_PORTABLE_CHEST_ATTR2</care_path_attr_code>
+			</lab_result>
+			<lab_result>
+				<name>Critical values in blood count or metabolic panel</name>
+				<care_path_attr_code>BLOOD_WORK_CBC_BMP_ATTR1</care_path_attr_code>				
+			</lab_result>
+			<lab_result>
+				<name>EKG shows new changes suggestive of an acute MI or arrhythmia</name>
+				<care_path_attr_code>EKG_ATTR1</care_path_attr_code>				
+			</lab_result>
+			<lab_result>
+				<name>Worsening clinical condition</name>
+				<care_path_attr_code>CP_UTI_S4_LAB_WORK4</care_path_attr_code>				
+			</lab_result>
+			<decision>
+				<met_any>
+					<message>NOTIFY_MD_NP_PA</message>
+				</met_any>
+				<met_none>
+					<next_step_id>5</next_step_id>
+				</met_none>
+			</decision>	
+		</step>			
+		<step step_name="Manage in Facility" step_id="5" step_type="MANAGE_IN_FACILITY">
+			<symptom>
+				<name>Worsening condition</name>
+				<care_path_attr_code>CP_UTI_S6_SYMPTOM1</care_path_attr_code>
+			</symptom>
+			<instruction>
+				<name>Monitor vital signs, fluid intake/urine output every 4-8 hrs</name>
+				<detail_description>Temp &gt; 100.5&#8457;</detail_description>
+				<detail_description>Apical heart rate &gt; 100 or &lt; 50</detail_description>
+				<detail_description>Respiratory rate &gt; 28/min or &lt; 10/min</detail_description>
+				<detail_description>BP &lt; 90 or &gt; 200 systolic</detail_description>
+				<detail_description>Oxygen saturation &lt; 90%</detail_description>
+				<detail_description>Finger stick glucose &lt; 70 or &gt; 300</detail_description>
+				<care_path_attr_code>CP_CIB_S5_INSTRUCTION1</care_path_attr_code>
+			</instruction>
+			<instruction>
+				<name>Oxygen supplementation as indicated</name>
+				<care_path_attr_code>CP_UTI_S5_INSTRUCTION2</care_path_attr_code>
+			</instruction>
+			<instruction>
+				<name>Consider</name>
+				<detail_description>Initiating or increasing diuretic dose</detail_description>
+				<detail_description>Initiating or modifying other cardiovascular medications</detail_description>
+				<detail_description>Monitoring electrolytes and kidney function</detail_description>
+				<care_path_attr_code>CP_UTI_S5_INSTRUCTION3</care_path_attr_code>
+			</instruction>
+			<instruction>
+				<name>Update advance care plan and directives if appropriate</name>
+				<care_path_attr_code>CP_UTI_S5_INSTRUCTION4</care_path_attr_code>
+			</instruction>
+			<instruction>
+				<name>Update advance care plan and directives if appropriate</name>
+				<care_path_attr_code>CP_UTI_S5_INSTRUCTION5</care_path_attr_code>
+			</instruction>
+			<decision>
+				<met_any>
+					<message>NOTIFY_MD_NP_PA</message>
+				</met_any>
+				<met_none>
+					<message>Monitor vital signs, fluid intake/urine output every 4-8 hrs for 24-72 hrs</message>
+				</met_none>
+			</decision>	
+		</step>		
+	</steps>
+</care_path_xml>	

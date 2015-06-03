@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="care_path_xml">
+		<xs:complexType>
+			<xs:sequence minOccurs="1" maxOccurs="1">
+				<xs:element ref="steps" />
+			</xs:sequence>
+			<xs:attribute name="care_path_code" type="xs:string" />
+			<xs:attribute name="care_path_name" type="xs:string" />
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="next_care_path">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="step_flag" type="xs:boolean" 
+					minOccurs="1" maxOccurs="1"/>
+				<xs:element name="care_path_code" type="xs:string"
+					minOccurs="1" maxOccurs="1"/>
+				<xs:element name="step_id" type="xs:int"
+					minOccurs="0" maxOccurs="1"/>	
+			</xs:sequence>
+		</xs:complexType>		
+	</xs:element>
+	
+	<xs:element name="symptom">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="name" type="xs:string" />
+				<xs:element name="care_path_attr_code" type="xs:string"
+					minOccurs="1" maxOccurs="1"/>
+			  <xs:element ref="next_care_path" minOccurs="0" maxOccurs="unbounded" />	
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="instruction">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="name" type="xs:string" />
+				<xs:element name="detail_description" type="xs:string"
+					minOccurs="0" maxOccurs="unbounded" />
+				<xs:element name="care_path_attr_code" type="xs:string"
+					minOccurs="1" maxOccurs="1"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="lab_result">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="name" type="xs:string" />
+				<xs:element name="care_path_attr_code" type="xs:string"
+					minOccurs="1" maxOccurs="1"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>	
+	
+	<xs:element name="vital_sign">
+		<xs:complexType>
+			<xs:sequence>
+				<!-- Check if data is available for care_path_attr_code, tracked while recording Change In Condition,
+				if not use value, datatype, min and max to validate -->
+				<xs:element name="name" type="xs:string" minOccurs="1"
+					maxOccurs="1" />
+				<xs:element name="care_path_attr_code" type="xs:string"
+					minOccurs="1" maxOccurs="1"/>
+				<xs:element name="value" type="xs:string" />
+				<xs:element name="datatype" type="xs:string" />
+				<xs:element name="min" type="xs:string" />
+				<xs:element name="max" type="xs:string" />
+				<xs:element name="units" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="lab_work">
+		<xs:complexType>
+			<xs:sequence>
+				<!-- Check if data is available for care_path_attr_code, tracked while recording Change In Condition,
+				if not use value, datatype, min and max to validate -->
+				<xs:element name="name" type="xs:string" minOccurs="1"
+					maxOccurs="1" />
+				<xs:element name="care_path_attr_code" type="xs:string"
+					minOccurs="0" />
+				<xs:element name="value" type="xs:string" />
+				<xs:element name="datatype" type="xs:string" />
+				<xs:element name="min" type="xs:string" />
+				<xs:element name="max" type="xs:string" />
+				<xs:element name="units" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="met_any">
+		<xs:complexType>
+			<xs:choice>
+				<xs:element name="next_step_id" type="xs:int"
+					minOccurs="0" maxOccurs="1" />
+				<xs:element name="message" type="xs:string" minOccurs="0"
+					maxOccurs="1" />
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="met_none">
+		<xs:complexType>
+			<xs:choice>
+				<xs:element name="next_step_id" type="xs:int"
+					minOccurs="0" maxOccurs="1" />
+				<xs:element name="message" type="xs:string" minOccurs="0"
+					maxOccurs="1" />
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="decision">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="met_any" minOccurs="0" maxOccurs="1" />
+				<xs:element ref="met_none" minOccurs="0" maxOccurs="1" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="step">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="symptom" minOccurs="0" maxOccurs="unbounded" />
+				<xs:element ref="vital_sign" minOccurs="0" maxOccurs="unbounded" />
+				<xs:element ref="lab_work" minOccurs="0" maxOccurs="unbounded" />
+				<xs:element ref="lab_result" minOccurs="0" maxOccurs="unbounded" />
+				<xs:element ref="instruction" minOccurs="0" maxOccurs="unbounded" />
+				<xs:element ref="decision" />
+			</xs:sequence> 
+			<xs:attribute name="step_name" type="xs:string" />
+			<xs:attribute name="step_id" type="xs:int" />
+			<xs:attribute name="step_type" type="xs:string" />
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="steps">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="step" minOccurs="1" maxOccurs="unbounded" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
