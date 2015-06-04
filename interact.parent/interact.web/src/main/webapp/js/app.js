@@ -34,10 +34,10 @@ function showChangeInConditionValuesInputPageForLabwork(signSymptomLabworkId) {
 					var len = data.length;
 					for (var i = 0; i < len; i++) {
 						if (data[i].datatype == 'BOOLEAN') {
-							innerHtmlTxt += '<div class="row"><input type="checkbox" '+(data[i].attrValue?"checked":"")+' name="symptomValues'+ data[i].id+ '" value="'+ data[i].id+ '"><label for="symptomValues'+ data[i].id+ '">'+ data[i].attrName+ '</label></div>';
+							innerHtmlTxt += '<div class="row"><input class="small-1 columns" type="checkbox" '+(data[i].attrValue?"checked":"")+' name="symptomValues'+ data[i].id+ '" value="'+ data[i].id+ '"><label class="small-10 columns end" for="symptomValues'+ data[i].id+ '">'+ data[i].attrName+ '</label></div>';
 						} else {
 							var datatype = data[i].datatype;
-							innerHtmlTxt += '<div class="row"><label for="symptomValues'+ data[i].id	+ '">'+ data[i].attrName+ '</label>'+ '<div class="large-3 columns"><input onkeypress="return isIntFolatKey(event, this)" data-datatype="'+ datatype+ '" type="text" id="numbersOnly" '+(!jQuery.isEmptyObject(data[i].attrValue)?'value="'+data[i].attrValue+'"':"")+'  name="symptomValues'+ data[i].id+ '"></div>'+ '<div class="small-1 columns end"><label for="symptomValues'+ data[i].id	+ '">'+ (data[i].units == null|| data[i].units == "" ? "" : "("+ data[i].units + ")")+ '</label></div></div>';
+							innerHtmlTxt += '<div class="row"><label class="large-8 columns" for="symptomValues'+ data[i].id	+ '">'+ data[i].attrName+ '</label>'+ '<div class="large-3 columns"><input onkeypress="return isIntFolatKey(event, this)" data-datatype="'+ datatype+ '" type="text" id="numbersOnly" '+(!jQuery.isEmptyObject(data[i].attrValue)?'value="'+data[i].attrValue+'"':"")+'  name="symptomValues'+ data[i].id+ '"></div>'+ '<div class="small-1 columns end"><label for="symptomValues'+ data[i].id	+ '">'+ (data[i].units == null|| data[i].units == "" ? "" : "("+ data[i].units + ")")+ '</label></div></div>';
 						}
 					}
 					innerHtmlTxt += '</div><div class="row" style="padding-top:10px;"><button id="changeConditionOk" value="Save" name="Save" onclick="submitCICLabworkFormValues('+signSymptomLabworkId+');" class="small right" style="padding:10px 20px;">Save</button><button id="changeConditionCancel" value="Cancel" name="Cancel" onclick="openJueryPopupClose('
@@ -611,6 +611,7 @@ function submitCICForm() {
 					openJueryPopupClose("#conditionPopup");
 					getConditionsSymptomsData(patientEpisodeId);
 					changeSbarPatientStatus(patientEpisodeId);
+					sbarEvaluate("");
 				} else {
 				}
 			}
@@ -750,6 +751,7 @@ function removeSymptomRecord(sid, patientEpisodeId) {
 		success : function(data) {
 			getConditionsSymptomsData(patientEpisodeId);
 			changeSbarPatientStatus(patientEpisodeId);
+			removeSymptomRecord("");
 		}
 	});
 };
@@ -2710,11 +2712,11 @@ function moveToAcuteCare(patientEpisodeId) {
 	}
 };
 
-function manageInFacilityConfirm(e) {
+function patientRecoveredConfirm(e) {
 	console.log("mangeIn...");
 	//if (e.is(':checked')) {
 		$("#dialog-confirm").html(
-				'<center><p  class="confirm-dialog">Manage the patient in facility</p> (if click yes patient moves to admission)</center>');
+				'<center><p  class="confirm-dialog">Is Patient Recovered?</p> (if click yes patient moves to admission)</center>');
 		$("#dialog-confirm").dialog({
 			resizable : false,
 			modal : true,
@@ -2723,7 +2725,7 @@ function manageInFacilityConfirm(e) {
 			buttons : {
 				"Yes" : function() {
 				//	$('#gender-dialog s').text($(this).val());
-					manageInFacility();
+					patientRecovered();
 					$(this).dialog('close');
 
 				},
@@ -2736,10 +2738,10 @@ function manageInFacilityConfirm(e) {
 
 	//}
 };
-function manageInFacility() {
+function patientRecovered() {
 	var patientEpisodeId = $('#sbarPatientEpisodeId').val();
 	$.ajax({
-		url : contextPath+'/sbar/moveToManagingFacility?patientEpisodeId='
+		url : contextPath+'/sbar/moveToAdmisionFromCA?patientEpisodeId='
 				+ patientEpisodeId,
 		type : 'get',
 		success : function(data) {
@@ -2973,6 +2975,7 @@ function sbarEvaluate(sbartabId) {
 						header += '<input id="notify" class="button small right" type="button" style="padding: 5px 15px; margin: 0;" onclick=notifyDoctor() value="Notify Doctor"/>';
 						}
 						content += header + headerEnd;
+						content += '<div class="row">'
 						var patientId = data.patientId;
 						if (data.changeInConditionMessageList.length != 0) {
 							hasSuggestion = true;
@@ -2983,14 +2986,14 @@ function sbarEvaluate(sbartabId) {
 								}
 							});
 							if (notifyImediate == true) {
-								content += '<div class="row" style="padding: 3px;"><b>Change In Condtion : </b><font color="red">'
+								content += '<div class="large-6 columns" style="padding: 3px;"><b>Change In Condtion : </b><font color="red">'
 										+ constants_reportImmidate
 										+ '</font></div>';
 								$("#sbarPatientStatus" + patientId)
 										.removeClass('no').text("Immediate");
 							} else {
 
-								content += '<div class="row" style="padding: 3px;"><b>Change In Condtion : </b><font color="red">'+ constants_reportNextDay+ '</font></div>';
+								content += '<div class="large-6 columns" style="padding: 3px;"><b>Change In Condtion : </b><font color="red">'+ constants_reportNextDay+ '</font></div>';
 								$("#sbarPatientStatus" + patientId).addClass('no').text("Non Immediate");
 							}
 
@@ -2999,11 +3002,11 @@ function sbarEvaluate(sbartabId) {
 						}
 						if (data.carePathNotifyDoctorMessageList.length != 0) {
 							hasSuggestion = true;
-							content += '<div class="row" style="padding: 3px;"><b>Care Path : </b><font color="red">Notify Doctor!</font></div>';
+							content += '<div class="large-6 columns" style="padding: 3px;"><b>Care Path : </b><font color="red">Notify Doctor!</font></div>';
 						}
 
 						if (hasSuggestion == true) {
-							$(".EvaluationMessagePanel").html(content + '</div></div>');
+							$(".EvaluationMessagePanel").html(content + '</div></div></div>');
 							$('.EvaluationMessagePanel').show();
 						}
 					}
@@ -3092,7 +3095,7 @@ function populateMessagesList(pageNo, msgSubject) {
 										else if(item.msgSubj == transfer_hospital_subj) {
 											content += '<tr><td class="mail_leftborder_red">';
 										}
-										else if(item.msgSubj == backin_facility_subj) {
+										else if(item.msgSubj == backin_facility_subj ||item.msgSubj==patient_Recoverd) {
 											content += '<tr><td class="mail_leftborder_green">';
 										}
 										content += '<input type="checkbox" name="checkClass"  id="messageAlertDetailsId"  value='
@@ -3338,9 +3341,9 @@ function submitCICVitalSignsFormOnPatient(doEval) {
 				//getConditionsVitalSignsDataOnPatient(patientEpisodeId);
 				getChangeInCanditionVitalSignBlack(patientEpisodeId)
 				changeSbarPatientStatus(patientEpisodeId);
-				if(doEval){
+			//	if(doEval){
 					sbarEvaluate("");
-				}
+			//	}
 			} else {
 
 			}

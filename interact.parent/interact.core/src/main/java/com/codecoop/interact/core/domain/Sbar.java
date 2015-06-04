@@ -49,6 +49,7 @@ public class Sbar implements java.io.Serializable {
 	private Date repotedToDate;
 	private String otherResidentCare;
 	private Boolean manageInFacilityFlag;
+	private Boolean patientRecoverdFlag;
 	private String MsgScenariocode;
 	private Boolean alertMailFlag;
 	private String plannedDetails;
@@ -317,6 +318,16 @@ public class Sbar implements java.io.Serializable {
 
 	public void setPlannedDetails(String plannedDetails) {
 		this.plannedDetails = plannedDetails;
+	}
+
+	
+	@Column(name ="PATIENT_RECOVERED_FLAG")
+	public Boolean getPatientRecoverdFlag() {
+		return patientRecoverdFlag;
+	}
+
+	public void setPatientRecoverdFlag(Boolean patientRecoverdFlag) {
+		this.patientRecoverdFlag = patientRecoverdFlag;
 	}
 	
 	

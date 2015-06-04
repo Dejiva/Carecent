@@ -393,7 +393,7 @@ function dynamicCarePathOnPatient() {
 										}
 
 									});
-					content = "<div class='row' style='max-height:240px; overflow:auto;'>" + content + "</div></div>"
+					content = "<div class='row' style='max-height:219px; overflow:auto;'>" + content + "</div></div>"
 					$('#dynamicCarePathsElementOnPatient').html(
 							header + content);
 					$("#dynamicCarePathsElementOnPatient").show();

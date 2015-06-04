@@ -61,7 +61,7 @@ public class RestDao {
 
 	public RestPatientObservationDto observationOfPatient(Long pEpisodeId){
 		Long sbarId;
-		String sbarSql = "select ID from SBAR where PATIENT_EPISODE_ID=:pEpisodeId and TRANSFER_TO_HOSPITAL_FLAG=0 and MANAGE_IN_FACILITY_FLAG=0";
+		String sbarSql = "select ID from SBAR where PATIENT_EPISODE_ID=:pEpisodeId and TRANSFER_TO_HOSPITAL_FLAG=0 and PATIENT_RECOVERED_FLAG=0";
 		SQLQuery sbarQuery =  getCurrentSession().createSQLQuery(sbarSql);
 		sbarQuery.setParameter("pEpisodeId",pEpisodeId);
 		if(!StringUtils.isEmpty(sbarQuery.uniqueResult())){

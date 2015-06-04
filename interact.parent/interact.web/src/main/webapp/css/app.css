@@ -1,6 +1,5 @@
 body {
 	background: rgb(237, 237, 237);
-	/*    margin: 1%;*/
 }
 
 html, body {
@@ -75,14 +74,11 @@ label {
 
 .app_logo.small-2 {
 	height: 50px;
-	/* 	margin-top: 10px; */
 	max-width: 150%;
 }
 
 .app_logo_error {
 	height: 30px;
-	/* 	margin-top: 10px; */
-	/* 	max-width: 50%; */
 	width: 16%;
 }
 
@@ -202,7 +198,6 @@ label {
 
 .col_body ul li {
 	background-color: rgb(237, 237, 237);
-	/*    border-bottom: 7px solid rgb(57, 162, 0);*/
 	border-radius: 4px;
 	height: 77px;
 	list-style: none outside none;
@@ -225,7 +220,6 @@ ul#three li {
 
 .panel.col_last {
 	margin-left: 10px;
-	/* 	background: none repeat scroll 0 0 white; */
 }
 
 .col_last_head {
@@ -365,7 +359,6 @@ table.mail_table thead {
 }
 
 table.mail_table thead tr th, table thead tr td {
-	/* color: rgb(90, 89, 61); */
 	color: #fff;
 }
 
@@ -436,8 +429,6 @@ table tr.even, table tr.alt, table tr:nth-of-type(2n) {
 }
 
 .dropdown {
-	/*position: relative;*/
-	/*width: 250px;*/
 	cursor: pointer;
 	font-weight: 200;
 	background: transparent;
@@ -467,7 +458,6 @@ table tr.even, table tr.alt, table tr:nth-of-type(2n) {
 }
 
 .dropdown.focus:after {
-	/*background: #FF422E;*/
 	
 }
 
@@ -488,9 +478,6 @@ table tr.even, table tr.alt, table tr:nth-of-type(2n) {
 }
 
 .dropdown .carat:after {
-	/* margin-top: -10px;
-     right: -8px;
-     border-top-color: #FF422E;*/
 	display: none;
 }
 
@@ -559,11 +546,9 @@ table tr.even, table tr.alt, table tr:nth-of-type(2n) {
 	bottom: 0;
 	width: 60px;
 	border-radius: 0 2px 2px 0;
-	/*box-shadow: inset -55px 0 25px -20px rgb(237, 237, 237);*/
 }
 
 .dropdown:hover .selected::after {
-	/*box-shadow: inset -55px 0 25px -20px rgb(237, 237, 237);*/
 	
 }
 
@@ -691,17 +676,7 @@ i.fi-star {
 	width: 12.5%;
 }
 
-/*@media only screen and (min-device-width : 768px) and (max-device-width : 1024px)  { 
-    .large-3 {
-        width: 132%;
-    }
-}
 
-@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {
-    .large-3 {
-        width: 132%;
-    }
-}*/
 .row.login-top {
 	position: relative;
 	top: 25px;
@@ -752,10 +727,10 @@ i.fi-star {
 	border: 0 none;
 	cursor: pointer;
 	float: left top;
-	font-size: 14px; //
-	left: 13px;
-	position: relative; //
-	top: 48px;
+	font-size: 14px; 
+/* 	left: 13px; */
+	position: relative; 
+/* 	top: 48px; */
 	color: gray;
 }
 
@@ -842,24 +817,6 @@ i.fi-star {
 	color: rgb(0, 83, 151);
 }
 
-/* /* .check_box input[type="checkbox"]+label { */ */
-/* /* 	    float: left; */
-/* * / */
-/* 	/* 	margin: 0.3rem -1rem 0rem 0rem; */ */
-/* 	/* }
-	/* .small-12.columns.check_box input[type="checkbox"] { */
-	/* 	margin: 0.57rem 0.2rem -1rem 0rem; */
-	/* } */
-	/* .small-13.columns.check_box input[type="checkbox"] { */
-	/* 	margin: 0.57rem 0.2rem -1rem 0rem; */
-	/* } */
-	/* .small-12.check_data label { */
-	/* 	font-size: 0.875rem; */
-	/* 	position: absolute; */
-	/* } */
-	/* .check_data label select { */
-	/* 	font-size: 12px; */
-	/* } */ 
 
 span#infomessage {
 	font-family: Raleway;
@@ -969,106 +926,29 @@ span#infomessage {
 	background: none repeat scroll 0 0 rgb(237, 237, 237);
 }
 
-.user_info
- 
-.top-bar-section
- 
-li
-:not
- 
-(
-.has-form
- 
-)
-a
-:not
- 
-(
-.button
- 
-)
-{
-background
-:
- 
-none
- 
-repeat
- 
-scroll
- 
-0
-0
-rgb
-(237
-,
-237,
-237);
-color
-:
- 
-#008cba
-;
+.user_info .top-bar-section li:not (.has-form) a:not (.button) {
 
-
+background: none repeat scroll 0 0 rgb(237, 237, 237);
+	color: #008cba;
 }
-.user_info .top-bar-section .dropdown li:not (.has-form ) a:not (.button
-	) {
+
+.user_info .top-bar-section .dropdown li:not (.has-form) a:not (.button) {
 	background: none repeat scroll 0 0 #008cba;
 	color: #fff;
 }
 
-.user_info
- 
-.top-bar-section
- 
-li
-:not
- 
-(
-.has-form
- 
-)
-a
-:hover
-:not
- 
-(
-.button
- 
-)
-{
-background
-:
- 
-none
- 
-repeat
- 
-scroll
- 
-0
-0
-rgb
-(237
-,
-237,
-237);
-color
-:
- 
-#008cba
-;
-
-
+.user_info .top-bar-section li:not (.has-form) a:hover:not (.button) {
+	background: none repeat scroll 0 0 rgb(237, 237, 237);
+	color: #008cba;
 }
-.user_info .top-bar-section ul li:hover:not (.has-form ) >a {
+
+.user_info .top-bar-section ul li:hover:not (.has-form) >a {
 	background: none repeat scroll 0 0 #008cba;
 	color: #FFF;
 }
 
-.user_info .top-bar-section .dropdown li:hover:not (.has-form ) a:not (.button
-	) {
+.user_info .top-bar-section .dropdown li:hover:not (.has-form) a:not (.button)
+ {
 	background: none repeat scroll 0 0 rgb(237, 237, 237);
 	color: #FFF;
 }
@@ -1077,51 +957,9 @@ color
 	padding: 0;
 }
 
-.user_info
- 
-.top-bar-section
- 
-.dropdown
- 
-li
-:hover
-:not
- 
-(
-.has-form
- 
-)
-a
-:not
- 
-(
-.button
-	
-)
-{
-background
-:
- 
-none
- 
-repeat
- 
-scroll
- 
-0
-0
-rgb
-(237
-,
-237,
-237);
-color
-:
- 
-#008cba
-;
-
-
+.user_info .top-bar-section .dropdown li:hover:not (.has-form) a:not (.button) {
+	background: none repeat scroll 0 0 rgb(237, 237, 237);
+	color: #008cba;
 }
 .has-dropdown.not-click>a {
 	text-transform: capitalize;
@@ -1153,12 +991,10 @@ dialog, #StopAndWatchModal.reveal-modal {
 }
 
 .col_right_panel.large-6.columns.end {
-	/* bottom: 20px;
-    left: 12px; */
 	position: relative;
 }
 
-.small-10.row.col_padding { //
+.small-10.row.col_padding { 
 	margin: 0 5rem;
 	padding: 0 5px;
 }
@@ -1177,7 +1013,6 @@ dialog, #NewPatientModal.reveal-modal {
 
 .panel.col_border label, input {
 	font-size: 13px;
-	/* 	left: 3px; */
 	position: relative;
 }
 
@@ -1194,11 +1029,10 @@ dialog, #NewPatientModal.reveal-modal {
 }
 
 .panel.col_border_blue.sbar_content {
-	min-height: 280px;
+	min-height: 262px;
 	border: 1px solid DarkBlue;
 	border-radius: 10px;
 	padding: 5px;
-	//min-height:
 }
 
 .input_width {
@@ -1397,7 +1231,7 @@ div.dataTables_filter label {
 	font-size: 20px;
 	position: relative;
 	top: 4px;
-	color: green; //
+	color: green; 
 	color: rgb(130, 107, 133);
 }
 
@@ -1462,15 +1296,6 @@ div.small-5.columns.check_box {
 	position: relative;
 }
 
-/* .other-input { */
-/* 	float: right; */
-/* 	position: relative; */
-/* /* 	top: -5px; */
-* /
-	/* 	width: 60% !important; */
-	/* 	margin: 0rem 0rem 0rem 0rem !important; */
-	/* } */ 
-
 .checkbox_left {
 	left: -8px;
 	position: relative;
@@ -1504,7 +1329,6 @@ div.small-5.columns.check_box {
 
 img.ui-datepicker-trigger {
 	position: relative;
-	/*left: 30px;*/
 	top: -25px;
 	float: right;
 }
@@ -1576,7 +1400,6 @@ label.fi-info:before {
 }
 
 @media screen and (-webkit-min-device-pixel-ratio:0) {
-	/* Safari only override */
 	::i-block-chrome, .fi-pencil.has-tip.tip-bottom.noradius {
 		left: -3px !important;
 	}
@@ -1723,22 +1546,6 @@ input[type="checkbox"]+label, input[type="radio"]+label {
 	top: -3px !important;
 }
 
-/* .ui-autocomplete.ui-front.ui-menu.ui-widget.ui-widget-content{ */
-/* 	font-family: Raleway !important; */
-/*     font-size: 15px !important; */
-/*     left: 1021px !important; */
-/*     top: 89px !important; */
-/*     width: 318px !important; */
-/*     border-radius: 5px !important; */
-/* } */
-
-/* .ui-menu .ui-menu-item { */
-/* 	padding: 2px !important; */
-/* } */
-
-/* .ui-state-hover, .ui-widget-content .ui-state-hover, .ui-widget-header .ui-state-hover, .ui-state-focus, .ui-widget-content .ui-state-focus, .ui-widget-header .ui-state-focus{ */
-/* 	background: none repeat scroll 0 0 lightgray !important; */
-/* } */
 .add_patient.button.tiny, .all_patients.button.tiny.right,
 	.assigned_patients.button.right {
 	font-family: Raleway;
@@ -1777,8 +1584,8 @@ input[type="checkbox"]+label, input[type="radio"]+label {
 	position: absolute;
 	left: 50%;
 	top: 50%;
-	margin-left: -32px; /* -1 * image width / 2 */
-	margin-top: -32px; /* -1 * image height / 2 */
+	margin-left: -32px;
+	margin-top: -32px; 
 	display: block;
 	z-index: 999;
 }
@@ -1838,13 +1645,6 @@ table thead tr th, table thead tr td {
 }
 
 .fi-first-aid {
-	/* float: right;
-	font-size: 35px;
-	margin: 0;
-	padding: 0;
-	position: relative;
-	right: 1px;
-	top: -5px; */
 	font-size: 25px;
 	margin: 0;
 	padding: 0;
@@ -2065,8 +1865,6 @@ span#admissionEyeSpan.fi-eye.tip-bottom.noradius {
 input[type="file"], input[type="checkbox"], input[type="radio"], select
 	{
 	margin: 0 0 1rem 0;
-	/* 	margin-top: 5px; */
-	/*  top: 5px;  */
 }
 
 .bold {
@@ -2083,7 +1881,6 @@ input[type="file"], input[type="checkbox"], input[type="radio"], select
 }
 
 .menu-items-list {
-	/* 	display: none; */
 	position: absolute;
 	z-index: 1;
 	background: rgb(0, 50, 91) !important;
@@ -2092,7 +1889,6 @@ input[type="file"], input[type="checkbox"], input[type="radio"], select
 }
 
 .menu-items-list-prescribe {
-	/* 	display: none; */
 	position: absolute;
 	z-index: 1;
 	background: rgb(0, 50, 91) !important;
@@ -2220,7 +2016,7 @@ ul.off-canvas-list li a, ul.f-dropdown li a {
 }
 
 .tabs-content.vertical>.content {
-	padding: 15px !important;
+	padding: 14px !important;
 	font-family: Raleway;
 }
 
@@ -2258,7 +2054,6 @@ ul.off-canvas-list li a, ul.f-dropdown li a {
 }
 
 #dob {
-	/* 	width:80px !important; */
 	
 }
 
@@ -2390,6 +2185,10 @@ div.small-7.columns.user_info {
    {
      background:none;
    }
+   #allpatientsspan
+   {
+    width:123px;
+   }
 } 
 
 @media screen and (width: 980px) and (height: 1280px)
@@ -2398,6 +2197,10 @@ div.small-7.columns.user_info {
    {
     font-size:13px;
    }
+   #allpatientsspan
+   {
+    width:123px;
+   }
 }
 
 @media screen and (width: 980px) and (height: 1280px)
@@ -2405,6 +2208,10 @@ div.small-7.columns.user_info {
 	#graphsstabs .tabs dd > a, #graphsstabs .tabs .tab-title > a
    {
     font-size:13px;
+   }
+   #allpatientsspan
+   {
+    width:123px;
    }
 }
 
@@ -2417,6 +2224,14 @@ div.small-7.columns.user_info {
 	{
 	 width:160px;
 	}
+	#allpatientsspan
+    {
+     width:123px;
+    }
+    #allpatientsspan
+    {
+     width:123px;
+    }
 }
 
 @media only screen and (width : 768px) and (height : 1024px)  
@@ -2434,6 +2249,10 @@ div.small-7.columns.user_info {
   #optionsMenuModal {
     margin-top: 16%;
   }
+  #allpatientsspan
+  {
+   width:123px;
+  }
 }
 
 @media only screen and (width : 640px) and (height: 480px) 
@@ -2448,6 +2267,17 @@ div.small-7.columns.user_info {
   }
   #labworkDocApprovedTable .accordion-navigation > a {
     font-size: 13px;
+  }
+  #StopAndWatchModalCancel,#InvalidateStopAndWatch,#StopAndWatchModalSub
+  {
+   padding:15px;
+  }
+  #AddNewPatient {
+    width: 162px;
+  }
+  #allpatientsspan
+  {
+   width:123px;
   }
 }
 
@@ -2467,6 +2297,17 @@ div.small-7.columns.user_info {
    {
      background:none;
    }
+   #StopAndWatchModalCancel,#InvalidateStopAndWatch,#StopAndWatchModalSub
+   {
+    padding:11px;
+   }
+   #AddNewPatient {
+    width: 162px;
+   }
+   #allpatientsspan
+   {
+    width:123px;
+   }
 }
 
 @media only screen and (width : 426px) and (height: 320px) 
@@ -2481,6 +2322,18 @@ div.small-7.columns.user_info {
     {
     width:190px;
     }
+    #StopAndWatchModalCancel,#InvalidateStopAndWatch,#StopAndWatchModalSub
+    {
+     padding:7px;
+    }
+    #AddNewPatient 
+    {
+     width: 162px;
+    }
+    #allpatientsspan
+   {
+    width:123px;
+   }
 }
 
 @media only screen and (width : 360px) and (height: 640px) 
@@ -2502,6 +2355,18 @@ div.small-7.columns.user_info {
     #symptomsDataTable .accordion-navigation > a {
      font-size: 12px;
      height: 50px;
+    }
+    #StopAndWatchModalCancel,#InvalidateStopAndWatch,#StopAndWatchModalSub
+    {
+     padding:2px;
+    }
+    #AddNewPatient 
+    {
+     width: 162px;
+    }
+    #allpatientsspan
+    {
+     width:123px;
     }
 }
 
@@ -2531,6 +2396,27 @@ div.small-7.columns.user_info {
     #symptomsDataTable .accordion-navigation > a {
      height: 70px;
     }
+    #StopAndWatchModalCancel
+    {
+     padding: 15px;
+    }
+    #InvalidateStopAndWatch
+    {
+     margin-left: -5rem;
+     padding: 15px;
+    }
+    #StopAndWatchModalSub
+    {
+     padding: 15px;
+    }
+    #AddNewPatient 
+    {
+     width: 162px;
+    }
+    #allpatientsspan
+    {
+     width:123px;
+    }
 }
 
 .QIsymtomDataTable tbody tr, .QIsymtomDataTable tbody tr td {
@@ -2558,35 +2444,6 @@ div.small-7.columns.user_info {
 	background: #fff none repeat scroll 0 0;
 	width: 30px;
 }
-
-/* #qualityImprovementChart { */
-/* 	width: 600px; */
-/* 	height: auto; */
-/* /* 	left: 615px; */
-* /
-	/* 	top: -4px; */
-	/* } */
-	/* table#symtomDataTable { */
-	/* 	width:440px; */
-	/* 	border-collapse: collapse; */
-	/* 	bottom: 3px; */
-	/* 	position: relative; */
-	/* } */
-	/* #symtomDataTable tbody tr, #symtomDataTable tbody tr td { */
-	/* 	border: 1px solid #000; */
-	/* 	padding: 1px 5px; */
-	/* 	background: #fff none repeat scroll 0 0; */
-	/* } */
-	/* #symtomDataTable thead th { */
-	/* 	border: 1px solid #000; */
-	/* 	padding: 0 5px !important; */
-	/* 	background: #fff none repeat scroll 0 0; */
-	/* } */
-	/* #symtomDataTable tbody tr:first-child, #symtomDataTable tbody tr td:first-child, */
-	/* 	#symtomDataTable thead th:first-child { */
-	/* 	padding-left: 0px; */
-	/* 	background: #fff none repeat scroll 0 0; */
-	/* } */ 
 
 .graph-orbit.orbit-slides-container li.active {
 	max-height: 500px;
@@ -2625,18 +2482,14 @@ div.small-7.columns.user_info {
 .QIqualityImprovementChart {
 	width: 600px;
 	height: auto;
-	/* left: 615px; */
 	top: -6px;
-/* 	overflow: hidden; */
 }
 
 .QIqualityImprovementlineChart {
 	width: 800px;
 	height:400px;
 	height: auto;
-	/* left: 615px; */
 	top: -6px;
-/* 	overflow: hidden; */
 }
 
 table.QIsymtomDataTable {

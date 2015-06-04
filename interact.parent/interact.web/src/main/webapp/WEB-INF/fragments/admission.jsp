@@ -78,7 +78,7 @@
 							<div class="large-2 column padding-lr">
 								<label>Work Number:  <form:input path="pcpWorkNumber" maxlength="30" readonly="true"/></label>
 							</div>
-							<div class="large-2 column padding-lr">
+<%-- 							<div class="large-2 column padding-lr">
                             <label>Patient  Care Types</label>
                             <form:select path="patientCareTypes">
                             <form:option value="">-- select --</form:option>
@@ -95,7 +95,7 @@
                             <form:option value="AUHG">Aetna UHG</form:option>
                             <form:option value="CIGNA">Cigna</form:option>
                             </form:select>
-                            </div>
+                            </div> --%>
                             </div>
 						</div>
 					</div>

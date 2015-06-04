@@ -4,6 +4,7 @@ package com.codecoop.interact.core.dao;
 import java.math.BigInteger;
 import java.util.Date;
 import java.util.List;
+
 import org.springframework.util.StringUtils;
 import org.hibernate.SQLQuery;
 import org.springframework.stereotype.Component;
@@ -11,13 +12,14 @@ import org.springframework.stereotype.Component;
 import com.codecoop.interact.core.domain.PatientEncounter;
 import com.codecoop.interact.core.domain.PatientEpisode;
 import com.codecoop.interact.core.domain.Sbar;
+import com.codecoop.interact.core.domain.StopAndWatch;
 
 @Component
 public class SbarDaoImpl extends BaseDao<Sbar> {
 
 	public Sbar findByPatientEpisode(PatientEpisode patientEpisode) {
 		
-		String sql = "select s.* from SBAR s where s.PATIENT_EPISODE_ID=:patientEpisode and s.MANAGE_IN_FACILITY_FLAG =0 and s.TRANSFER_TO_HOSPITAL_FLAG=0 ";
+		String sql = "select s.* from SBAR s where s.PATIENT_EPISODE_ID=:patientEpisode and s.PATIENT_RECOVERED_FLAG =0 and s.TRANSFER_TO_HOSPITAL_FLAG=0 ";
 		SQLQuery qry = getCurrentSession().createSQLQuery(sql);
 		qry.setParameter("patientEpisode", patientEpisode);
 		qry.addEntity(Sbar.class);
@@ -28,7 +30,7 @@ public class SbarDaoImpl extends BaseDao<Sbar> {
 
 	@SuppressWarnings("unchecked")
 	public List<Sbar> findByFacilityId(Long facilityId) {
-		String sql = "select s.* from SBAR s,PATIENT pat, PATIENT_EPISODE p  where p.FACILITY_ID=:faicilityId and p.ID=s.PATIENT_EPISODE_ID and s.MANAGE_IN_FACILITY_FLAG =0 and s.TRANSFER_TO_HOSPITAL_FLAG=0  and pat.ID=p.PATIENT_ID order by pat.FIRST_NAME ASC";
+		String sql = "select s.* from SBAR s,PATIENT pat, PATIENT_EPISODE p  where p.FACILITY_ID=:faicilityId and p.ID=s.PATIENT_EPISODE_ID and s.PATIENT_RECOVERED_FLAG =0 and s.TRANSFER_TO_HOSPITAL_FLAG=0  and pat.ID=p.PATIENT_ID order by pat.FIRST_NAME ASC";
 		SQLQuery qry = getCurrentSession().createSQLQuery(sql);
 		qry.setParameter("faicilityId", facilityId);
 		qry.addEntity(Sbar.class);
@@ -50,6 +52,16 @@ public class SbarDaoImpl extends BaseDao<Sbar> {
 			return null;
 		}
 		return result.longValue();
+	}
+
+	public Sbar recentClosedSabr(PatientEpisode patientEpisode) {
+		String sql = "select s.* from SBAR s where s.PATIENT_EPISODE_ID=:patientEpisode and( s.PATIENT_RECOVERED_FLAG !=0 or s.TRANSFER_TO_HOSPITAL_FLAG!=0 ) order by s.DATE_MODIFIED desc limit 1";
+		SQLQuery query =  getCurrentSession().createSQLQuery(sql);
+		query.setParameter("patientEpisode", patientEpisode);
+		query.addEntity(Sbar.class);
+		return  (Sbar)query.uniqueResult();
+
+		
 	}
 	
 	

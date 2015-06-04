@@ -11,7 +11,19 @@
 		http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-3.0.xsd">
 
 
-	<jee:jndi-lookup id="interactDataSource" jndi-name="jdbc/INTERACT" />
+<!-- 	<jee:jndi-lookup id="interactDataSource" jndi-name="jdbc/INTERACT" /> -->
+
+	<bean id="interactDataSource"
+		class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
+		<property name="driverClass" value="${jdbc.driverClassName}" />
+		<property name="jdbcUrl" value="${jdbc.employee_db_url}" />
+		<property name="user" value="${jdbc.username}" />
+		<property name="password" value="${jdbc.password}" />
+		<property name="maxPoolSize" value="${jdbc.maxPoolSize}" />
+		<property name="minPoolSize" value="${jdbc.minPoolSize}" />
+		<property name="maxStatements" value="${jdbc.maxStatements}" />
+		<property name="testConnectionOnCheckout" value="${jdbc.testConnection}" />
+	</bean>
 
 	<tx:annotation-driven transaction-manager="transactionManager" />
 

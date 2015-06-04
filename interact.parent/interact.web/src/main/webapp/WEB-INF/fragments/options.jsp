@@ -46,7 +46,7 @@
 							class='button small right'
 							style='padding: 5px 15px; margin: 0;' />
 					</div>
-					<div class='row' style="margin: 0; max-height: 100%; overflow:auto; height:240px;">
+					<div class='row' style="margin: 0; max-height: 100%; overflow:auto; height:220px;">
 					<dl class="accordion" id="symptomsDataTable" data-accordion></dl>
 					</div>
 				</div>
@@ -66,7 +66,7 @@
 						<div class='row' style="margin: 0;">
 							<p class="s_header left">Symptoms</P>
 						</div>
-						<div class='row' style="margin:0;  overflow:auto; width:655px; height:250px;">
+						<div class='row' style="margin:0;  overflow:auto; width:655px; height:220px;">
 							<dl class="accordion" id="symptomsViewDataTable" data-accordion></dl>
 						</div>
 				   </div>
@@ -76,7 +76,7 @@
   				  <input class="button small right" id="addMedicine" onclick="addPrescribe()" type="button" value="Add Medicine" style="padding: 5px 15px; margin: 0px 8px;">		        
 				  <input class="button small right" id="addLabWorkForSymptom"  onclick="addLabWorkForSymptom()" type="button" value="Add Tests" style="padding: 5px 15px; color: margin: 0;">				       
 				</div>
-				  <div  style="overflow:auto; max-height:240px;"  id="medicineviewtable" style="margin-top:20%" ></div>     
+				  <div  style="overflow:auto; max-height:220px;"  id="medicineviewtable" style="margin-top:20%" ></div>     
                 </div>	
 		      </div>
 		   </c:when>
@@ -86,7 +86,7 @@
 						<div class='row' style="margin: 0;">
 							<p class="s_header left">Symptoms</P>
 						</div>
-						<div class='row' style="margin: 0;  overflow:scroll; height:250px;">
+						<div class='row' style="margin: 0;  overflow:scroll; height:220px;">
 							<dl class="accordion" id="symptomsViewDataTable" data-accordion></dl>
 						</div>
 				   </div>
@@ -128,7 +128,7 @@
 	    <div class="content" id="panel3">
 	          <div class="content">
 	             	<div class="panel col_border_blue sbar_content">
-							<div  style="max-height: 314px; overflow:auto;">
+							<div  style="max-height: 251px; overflow:auto;">
 							<c:choose>
 								<c:when test='${sessionScope.loggedUser.responsibilityName == "DOCTOR" || sessionScope.loggedUser.responsibilityName == "NURSE" }'>
 							<input type="button" id="addlabWork" value="Add Tests"
@@ -244,10 +244,13 @@
 					<c:choose>
 					 <c:when test='${ sessionScope.role== "MD"|| sessionScope.role== "PA"||sessionScope.role== "NP"||sessionScope.role== "LPN"||sessionScope.role== "RN"}'>
 						<div class="row">
-							<div class='large-2 columns'>
-								<input type="radio" class="inline-label" data-radio='pationMove'
-									id="manageInFacilityFlag" name="manageInFacilityFlag"  onclick="manageInFacilityConfirm(this)"/> <label
-									for="manageInFacilityFlag"> Manage In Facility</label>
+							<div class='large-3 columns'>
+								<input type="button" class="button small" 
+									onclick="patientRecoveredConfirm(this)" value="Patient Recovered"/> 
+							</div>
+							<div class='large-2 columns end '>
+							<input type="button" class="button small" 
+									onclick="manageInFacilityConfirm(this)" value="Manage In Facility"/>  
 							</div>
 							<!-- <div class='large-10 columns'>
 								<input type="radio" class="inline-label" data-radio='pationMove'
@@ -259,7 +262,7 @@
 					</c:choose>
 	    </div>
 	    <div class="content" id="panel7">
-	    <div style="overflow:auto; max-height:263px; max-width:63em;">
+	    <div style="overflow:auto; max-height:260px; max-width:63em;">
 	       <form:form commandName="sbarForm" method="GET" action="${pageContext.request.contextPath}/sbar/submit" id="SBARModalForm">
 		       <input type="hidden" id="sbarPatientEpisodeId" name="sbarPatientEpisodeId" />
 		       

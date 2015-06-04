@@ -239,13 +239,13 @@
 					</c:when>
 					</c:choose>
 					<div class="row">
-					<div class="large-12 columns">
+					<div class="large-12 columns padding-lr" style="padding-top:10px">
 						<div class="small-6 columns">
 					         <input type="button" id="StopAndWatchModalCancel"
 								class="button small revertBackListElement left" value="Close"
 								tabindex="3" />
 						</div>
-						<div class="small-4 columns right updatevalid">
+						<div class="small-4 columns right">
 						<input type="hidden" id="stopAndWatchHistroyInvalidateId">
 							<input type="button" id="InvalidateStopAndWatch" name="Invalidate"
 								class="button small" onclick="invalidateStopAndWatch()" value="Invalid" tabindex="3"  >

@@ -97,6 +97,7 @@
 	var cpSubj='<%=Constants.CP_SUBJECT%>';
 	var acuteCareSubj='<%=Constants.ACUTECARE_SUBJECT%>';	
 	var mang_FacilitySubj='<%=Constants.MANG_FACILITY_SUBJECT%>';
+	var patient_Recoverd='<%=Constants.PATIENT_RECOVERD_SUBJECT%>';
 	var  backin_facility_subj='<%=Constants.BACKIN_FACILITY_SUBJ%>';
 	var transfer_hospital_subj='<%=Constants.TRANSFER_HOSPITAL_SUBJ%>';
 	var immediate='<%=Constants.CIC_NOTIFY_IMMEDIATE%>';

@@ -83,6 +83,7 @@ public class Constants {
 	public static final String CP_SUGG_CONSORDER_MANGFACILITY="CP_SUGG_CONSORDER_MANGFACILITY";
 	public static final String PATIENT_TRANSFER_ACUTECARE="PATIENT_TRANSFER_ACUTECARE";
 	public static final String PATIENT_TRANSFER_MANGFACILITY="PATIENT_TRANSFER_MANGFACILITY";
+	public static final String PATIENT_RECOVERD_TRANSFER="PATIENT_RECOVERD_TRANSFER";
 	public static final String PATIENT_TRANSFER_HOSPITAL="PATIENT_TRANSFER_HOSPITAL";
 	public static final String PATIENT_BACKIN_FACILITY="PATIENT_BACKIN_FACILITY";
 	public static final String MSG_ALERT_TEMPLATE_PATIENT_CODE="$P#";
@@ -100,6 +101,7 @@ public class Constants {
 	public static final String ACUTECARE_SUBJECT="ACUTE CARE TRANSFER";
 	public static final String CONSIDER_ORDERS="CONSIDER_ORDERS";
 	public static final String MANG_FACILITY_SUBJECT="MANAGE IN FACILITY";
+	public static final String PATIENT_RECOVERD_SUBJECT="PATIENT_RECOVERD";
 	public static final String TRANSFER_HOSPITAL_SUBJ="TRANSFERRED TO HOSPITAL";
 	public static final String BACKIN_FACILITY_SUBJ="BACK IN FACILITY";
 	public static final String NEED_APPROVE="require_approve_from_Doctor";

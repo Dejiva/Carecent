@@ -778,14 +778,14 @@ public class SBARController extends SessionManagedLists {
 		return sbarService.removeMedicine(prescribeMedicineId);
 	}
 
-	@RequestMapping(value = "/moveToManagingFacility", method = { RequestMethod.GET })
-	public @ResponseBody String moveToManagingFacility(
+	@RequestMapping(value = "/moveToAdmisionFromCA", method = { RequestMethod.GET })
+	public @ResponseBody String moveToAdmisionFromCA(
 			HttpServletRequest request) {
 		Long patientEpisodeId = Long.parseLong(request.getParameter("patientEpisodeId"));
 		HttpSession session = request.getSession(true);
 		LoggedUserModel user = (LoggedUserModel)session.getAttribute("loggedUser");
 		try {
-			sbarService.moveToManagingFacility(patientEpisodeId, user);
+			sbarService.moveToAdmisionFromCA(patientEpisodeId, user);
 			return "SUCESS";
 		} catch (Exception e) {
 

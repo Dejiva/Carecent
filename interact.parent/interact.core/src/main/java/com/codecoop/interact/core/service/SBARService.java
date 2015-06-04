@@ -236,6 +236,13 @@ public class SBARService {
 			patientEpisode.setSbarRised(true);
 			patientEpisodeDao.saveOrUpdate(patientEpisode);
 			StopAndWatch stopAndWatch=StopAndWatchDao.findActiveStopAndWatch(patientEpisode);
+			Sbar recentlyClosedSbr=sbarDao.recentClosedSabr(patientEpisode);
+			if(recentlyClosedSbr!=null){
+				 String prevScenariocode=recentlyClosedSbr.getMsgScenariocode();
+				 messageService.suspendedPreviousMessages(recentlyClosedSbr.getId(),prevScenariocode,Constants.MESSAGE);
+				 messageService.suspendedPreviousAlerts(recentlyClosedSbr.getId(),prevScenariocode,Constants.ALERT);
+			
+			}
 			if(stopAndWatch!=null){
 			stopAndWatch.setEndDate(new Date());
 			StopAndWatchDao.saveOrUpdate(stopAndWatch);
@@ -245,7 +252,7 @@ public class SBARService {
 				 messageService.suspendedPreviousAlerts(stopAndWatchHistory.getId(),stopAndWatchHistory.getMsgScenarioCode(),Constants.ALERT);
 			 }
 			}
-			sbar.setManageInFacilityFlag(false);
+			sbar.setPatientRecoverdFlag(false);
 			sbar.setTransferToHospitalFlag(false);
 				MessageDto messageDto=new MessageDto();
 				String prevScenariocode=messageDao.getPrevScenarioCodeByEventId(patientEpisode.getId());
@@ -922,6 +929,45 @@ public class SBARService {
 			messageDto.setPrevScenarioCode(sbar.getMsgScenariocode());
 			messageDto.setCurrentScenarioCode(Constants.PATIENT_TRANSFER_MANGFACILITY);
 			sbar.setMsgScenariocode(Constants.PATIENT_TRANSFER_MANGFACILITY);
+			sbarDao.saveOrUpdate(sbar);
+			messageDto.setEventId(sbar.getId());
+			messageDto.setDeleteFlag(false);
+			messageDto.setReadFlag(false);
+			messageDto.setSentDate(new Date());
+			messageService.saveMessages(messageDto);
+			messageService.saveAlerts(messageDto);
+			
+			
+			}else{
+				throw new Exception();
+			}
+		
+	}
+	@Transactional
+	public void moveToAdmisionFromCA(Long patientEpisodeId,LoggedUserModel user)throws Exception {
+		PatientEpisode patientEpisode = patientEpisodeDao
+				.findById(patientEpisodeId);
+		Sbar sbar = findByPatientEpisode(patientEpisode);
+		if(sbar!=null){
+			
+			sbar.setPatientRecoverdFlag(true);
+			sbar.setUserModified(user.getFullName());
+			sbar.setDateModified(new Date());
+			String reason="Doctor decision is patient is recoverd";
+		    encounterColse(patientEpisode,user.getFullName(),reason);
+		    MessageDto messageDto=new MessageDto();
+			String prevScenariocode=messageDao.getPrevScenarioCodeByEventId(patientEpisode.getId());
+		    messageService.suspendedPreviousMessages(patientEpisode.getId(),prevScenariocode,Constants.MESSAGE);
+		    messageService.suspendedPreviousAlerts(patientEpisode.getId(),prevScenariocode,Constants.ALERT);
+		    
+			messageDto.setReportedToDocter(user.getFstaffId());
+			messageDto.setFacilityId(patientEpisode.getFacilityId());
+			messageDto.setPatientEpisodeId(patientEpisodeId);
+			messageDto.setPatientId(patientEpisode.getPatient().getId());
+			messageDto.setMsgSubj(Constants.PATIENT_RECOVERD_SUBJECT);
+			messageDto.setPrevScenarioCode(sbar.getMsgScenariocode());
+			messageDto.setCurrentScenarioCode(Constants.PATIENT_RECOVERD_TRANSFER);
+			sbar.setMsgScenariocode(Constants.PATIENT_RECOVERD_TRANSFER);
 			sbarDao.saveOrUpdate(sbar);
 			messageDto.setEventId(sbar.getId());
 			messageDto.setDeleteFlag(false);
